@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>Privacy Policy | Iskra</title>
+        <meta
+            name="description"
+            content="Privacy Policy for the Iskra website and services." />
+        <link
+            rel="preconnect"
+            href="https://cdn.jsdelivr.net"
+            crossorigin />
+        <link
+            rel="stylesheet"
+            id="silktide-consent-manager-css"
+            href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css"
+            integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/"
+            crossorigin="anonymous" />
+        <style id="silktide-consent-manager-overrides">
+            #stcm-wrapper {
+                --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+                --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+                --primaryColor: #ff6a00;
+                --backgroundColor: #18181b;
+                --textColor: #ffffff;
+                --backdropBackgroundColor: #00000033;
+                --backdropBackgroundBlur: 0px;
+                --iconColor: #18181b;
+                --iconBackgroundColor: #ff6a00;
+            }
+        </style>
+        <script
+            src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js"
+            integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq"
+            crossorigin="anonymous"></script>
+        <script>
+            window.silktideConsentManager.init({
+                backdrop: {
+                    show: false,
+                },
+                icon: {
+                    position: "bottomRight",
+                },
+                prompt: {
+                    position: "bottomRight",
+                },
+                consentTypes: [
+                    {
+                        id: "essential",
+                        label: "Essential",
+                        description:
+                            "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like setting your privacy preferences.</p>",
+                        required: true,
+                        onAccept: function () {
+                            console.log("Add logic for the required Essential consent type here");
+                        },
+                    },
+                    {
+                        id: "analytics",
+                        label: "Analytics",
+                        description:
+                            "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+                        required: false,
+                        gtag: "analytics_storage",
+                    },
+                ],
+                text: {
+                    prompt: {
+                        description:
+                            "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+                        acceptAllButtonText: "Accept all",
+                        acceptAllButtonAccessibleLabel: "Accept all cookies",
+                        rejectNonEssentialButtonText: "Reject non-essential",
+                        rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+                        preferencesButtonText: "Preferences",
+                        preferencesButtonAccessibleLabel: "Toggle preferences",
+                    },
+                    preferences: {
+                        title: "Customize your cookie preferences",
+                        description:
+                            "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+                        saveButtonText: "Save and close",
+                        saveButtonAccessibleLabel: "Save your cookie preferences",
+                        creditLinkText: "Get this banner for free",
+                        creditLinkAccessibleLabel: "Get this banner for free",
+                    },
+                },
+            });
+        </script>
+        <link
+            href="../css/output.css"
+            rel="stylesheet" />
+    </head>
+    <body>
+        <header class="website-navbar backdrop-blur-lg py-5 h-20 min-[540px]:h-29.5">
+            <div class="navbar container h-full justify-between">
+                <div class="navbar-start w-auto h-full">
+                    <a
+                        href="/#top"
+                        class="flex justify-center items-center h-1/2 min-[540px]:h-2/3 min-[1280px]:h-full">
+                        <img
+                            src="/assets/images/IskraLogo.png"
+                            alt="Iskra logo"
+                            class="h-full mr-2 min-[540px]:mr-3 min-[1280px]:mr-4" />
+                        <img
+                            src="/assets/images/iskra-text-logo.svg"
+                            alt="Iskra logo"
+                            class="h-2/5 mt-3 min-[540px]:mt-4 min-[1280px]:mt-5 hidden min-[391px]:block" />
+                    </a>
+                </div>
+                <div class="navbar-end hidden lg:flex w-fit">
+                    <ul class="flex justify-center items-center px-1">
+                        <li><a href="/#projects">Projects</a></li>
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/#about">About</a></li>
+                    </ul>
+                    <a
+                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        class="btn"
+                        >Contact</a
+                    >
+                </div>
+                <button
+                    tabindex="0"
+                    id="navToggle"
+                    class="inline-flex lg:hidden cursor-pointer">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-8 w-8"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <nav
+            id="sideNav"
+            class="mobile-nav">
+            <ul
+                tabindex="-1"
+                class="flex flex-col justify-start items-center gap-8 sm:gap-10 text-base sm:text-2xl">
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#about">About</a></li>
+                <li>
+                    <a
+                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        class="btn"
+                        >Contact</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <main id="privacy-policy">
+            <section class="section">
+                <div class="container">
+                    <h1>Privacy Policy</h1>
+                    <p>Last updated: July 18, 2026</p>
+
+                    <p>
+                        This Privacy Policy explains how Iskra collects, uses, and protects
+                        information when you visit this website or contact us about our services. By
+                        using this website, you agree to the practices described in this policy.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Information We Collect</h2>
+                    <p>
+                        We may collect information you choose to provide when you contact us, such
+                        as your name, email address, company name, website, project details, and any
+                        other information included in your message.
+                    </p>
+                    <p>
+                        We may also collect limited technical information, such as browser type,
+                        device type, pages visited, and general usage data, especially if analytics
+                        cookies are accepted.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>How We Use Your Information</h2>
+                    <p>
+                        We use your information to respond to inquiries, discuss potential projects,
+                        provide services, improve our website, understand visitor behavior, and
+                        maintain the security and functionality of the website.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Cookies</h2>
+                    <p>
+                        This website may use essential cookies required for basic functionality and
+                        optional analytics cookies to help us understand how visitors use the site.
+                        Non-essential cookies are only used based on your consent.
+                    </p>
+                    <p>
+                        You can update your cookie preferences at any time using the cookie settings
+                        control available on the website.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Analytics</h2>
+                    <p>
+                        If analytics cookies are accepted, we may use analytics tools to collect
+                        aggregated information about website traffic and visitor behavior. This
+                        helps us improve the structure, content, and performance of the website.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Sharing Your Information</h2>
+                    <p>
+                        We do not sell your personal information. We may share information only when
+                        necessary to operate the website, provide services, comply with legal
+                        obligations, or work with trusted service providers who help us run our
+                        business.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Data Retention</h2>
+                    <p>
+                        We keep personal information only for as long as needed to respond to your
+                        inquiry, provide services, maintain business records, or comply with legal
+                        obligations.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Your Rights</h2>
+                    <p>
+                        Depending on your location, you may have the right to request access,
+                        correction, deletion, or restriction of your personal information. You may
+                        also have the right to object to certain processing or withdraw consent for
+                        optional cookies.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Third-Party Links</h2>
+                    <p>
+                        This website may contain links to external websites. We are not responsible
+                        for the privacy practices, content, or security of third-party websites.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Changes to This Policy</h2>
+                    <p>
+                        We may update this Privacy Policy from time to time. Any changes will be
+                        posted on this page with an updated date.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Contact</h2>
+                    <p>
+                        If you have questions about this Privacy Policy, you can contact us at:
+                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-(--bg-surface) py-10">
+            <div class="container footer sm:footer-horizontal text-lg min-[640px]:text-2xl">
+                <aside>
+                    <a
+                        href="/#top"
+                        class="flex items-end gap-0">
+                        <img
+                            src="/assets/images/IskraLogo.png"
+                            alt="Iskra logo"
+                            class="h-25 mr-4" />
+                        <img
+                            src="/assets/images/iskra-text-logo.svg"
+                            alt="Iskra logo"
+                            class="h-10 mb-5" />
+                    </a>
+                    <p class="text-(--text-muted) font-light mt-3 text-base min-[640px]:text-lg">
+                        © 2026 Iskra. All rights reserved.
+                    </p>
+                </aside>
+                <nav class="flex flex-col gap-2 min-[640px]:gap-4">
+                    <h6 class="text-(--text-muted) uppercase">Pages</h6>
+                    <a href="/#projects">Projects</a>
+                    <a href="/#services">Services</a>
+                    <a href="/#about">About</a>
+                    <a
+                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        class="btn"
+                        >Contact</a
+                    >
+                </nav>
+                <nav class="flex flex-col gap-2 min-[640px]:gap-4">
+                    <h6 class="text-(--text-muted) uppercase">Legal</h6>
+                    <a href="/terms-of-use">Terms of Use</a>
+                    <a>Privacy Policy</a>
+                </nav>
+            </div>
+        </footer>
+
+        <script
+            type="module"
+            src="/js/index.js"></script>
+    </body>
+</html>

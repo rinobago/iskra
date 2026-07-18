@@ -7,6 +7,87 @@
             content="width=device-width, initial-scale=1.0" />
         <title>Iskra | UX Design & Web Development</title>
         <link
+            rel="preconnect"
+            href="https://cdn.jsdelivr.net"
+            crossorigin />
+        <link
+            rel="stylesheet"
+            id="silktide-consent-manager-css"
+            href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css"
+            integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/"
+            crossorigin="anonymous" />
+        <style id="silktide-consent-manager-overrides">
+            #stcm-wrapper {
+                --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+                --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+                --primaryColor: #ff6a00;
+                --backgroundColor: #18181b;
+                --textColor: #ffffff;
+                --backdropBackgroundColor: #00000033;
+                --backdropBackgroundBlur: 0px;
+                --iconColor: #18181b;
+                --iconBackgroundColor: #ff6a00;
+            }
+        </style>
+        <script
+            src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js"
+            integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq"
+            crossorigin="anonymous"></script>
+        <script>
+            window.silktideConsentManager.init({
+                backdrop: {
+                    show: false,
+                },
+                icon: {
+                    position: "bottomRight",
+                },
+                prompt: {
+                    position: "bottomRight",
+                },
+                consentTypes: [
+                    {
+                        id: "essential",
+                        label: "Essential",
+                        description:
+                            "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like setting your privacy preferences.</p>",
+                        required: true,
+                        onAccept: function () {
+                            console.log("Add logic for the required Essential consent type here");
+                        },
+                    },
+                    {
+                        id: "analytics",
+                        label: "Analytics",
+                        description:
+                            "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+                        required: false,
+                        gtag: "analytics_storage",
+                    },
+                ],
+                text: {
+                    prompt: {
+                        description:
+                            "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+                        acceptAllButtonText: "Accept all",
+                        acceptAllButtonAccessibleLabel: "Accept all cookies",
+                        rejectNonEssentialButtonText: "Reject non-essential",
+                        rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+                        preferencesButtonText: "Preferences",
+                        preferencesButtonAccessibleLabel: "Toggle preferences",
+                    },
+                    preferences: {
+                        title: "Customize your cookie preferences",
+                        description:
+                            "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+                        saveButtonText: "Save and close",
+                        saveButtonAccessibleLabel: "Save your cookie preferences",
+                        creditLinkText: "Get this banner for free",
+                        creditLinkAccessibleLabel: "Get this banner for free",
+                    },
+                },
+            });
+        </script>
+        <link
             href="./css/output.css"
             rel="stylesheet" />
     </head>
@@ -266,12 +347,19 @@
                             class="w-full flex flex-col items-center justify-start md:items-start md:justify-between md:flex-row gap-20 min-[768px]:gap-10 min-[1150px]:gap-20 xl:gap-30">
                             <div
                                 class="w-full flex flex-col justify-start items-center gap-20 min-[768px]:gap-40">
-                                <div
+                                <a
                                     class="w-full flex flex-col justify-start items-start project-card cursor-pointer project-image">
-                                    <img
-                                        class="w-full"
-                                        src="assets/images/etCetera.jpeg"
-                                        alt="" />
+                                    <div class="relative w-full overflow-hidden">
+                                        <img
+                                            class="w-full"
+                                            src="assets/images/etCetera.jpeg"
+                                            alt="" />
+                                        <div
+                                            class="absolute inset-0 flex items-center justify-center bg-black/65 text-white font-medium">
+                                            Still in progress
+                                        </div>
+                                    </div>
+
                                     <div
                                         class="flex flex-col justify-start items-start project-text">
                                         <p class="project-name font-medium">Et cetera</p>
@@ -279,8 +367,11 @@
                                             Translation agency in Zagreb, Croatia
                                         </p>
                                     </div>
-                                </div>
-                                <div
+                                </a>
+                                <a
+                                    href="https://www.laurusnobilisrent.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     class="w-full flex flex-col justify-start items-start project-card min-[768px]:mt-40 min-[1350px]:mt-60 cursor-pointer project-image">
                                     <img
                                         class="w-full"
@@ -295,11 +386,14 @@
                                             Seaside apartment in Lovran, Croatia
                                         </p>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div
                                 class="w-full flex flex-col justify-start items-center gap-20 min-[768px]:gap-40">
-                                <div
+                                <a
+                                    href="https://www.tregerteam.hr/atc/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     class="w-full flex flex-col justify-start items-start project-card min-[768px]:mt-80 min-[1350px]:mt-120 cursor-pointer project-image">
                                     <img
                                         class="w-full"
@@ -315,8 +409,11 @@
                                             experts
                                         </p>
                                     </div>
-                                </div>
-                                <div
+                                </a>
+                                <a
+                                    href="https://rinobago.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     class="w-full flex flex-col justify-start items-start project-card min-[768px]:mt-60 min-[1300px]:mt-100 cursor-pointer project-image">
                                     <img
                                         class="w-full"
@@ -329,10 +426,13 @@
                                             Personal website for Rino Bago
                                         </p>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                        <div
+                        <a
+                            href="https://www.tregerteam.hr"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             class="w-full flex flex-col justify-start items-start project-card min-[768px]:mt-40 min-[1150px]:mt-60 cursor-pointer project-image">
                             <img
                                 class="w-full min-[768px]:w-5/6"
@@ -344,7 +444,7 @@
                                     Translation agency in Zagreb, Croatia
                                 </p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -404,9 +504,9 @@
             <section
                 id="about"
                 class="section">
-                <div class="container">
+                <div class="container relative">
                     <div
-                        class="flex flex-col justify-start items-start gap-10 min-[500px]:gap-15 min-[600px]:gap-20 w-full min-[490px]:w-4/5 min-[950px]:w-2/3">
+                        class="relative z-10 flex flex-col justify-start items-start gap-10 min-[500px]:gap-15 min-[600px]:gap-20 w-full min-[490px]:w-4/5 min-[950px]:w-2/3">
                         <h2 class="text-[clamp(36px,8.7vw,96px)] font-bold">About Us</h2>
                         <p class="w-full about-text leading-normal">
                             We are Iskra, a web development and design agency founded in Zagreb,
@@ -418,6 +518,12 @@
                             clarity, performance, and the goals that matter most: more inquiries,
                             stronger credibility, and better results online.
                         </p>
+                    </div>
+                    <div class="z-1 w-9/10 absolute top-0 left-0 flex justify-end items-start">
+                        <img
+                            class="h-70 min-[490px]:h-100 min-[730px]:h-120 min-[850px]:h-150 blur-sm opacity-30"
+                            src="/assets/images/3DfireImage.png"
+                            alt="" />
                     </div>
                 </div>
             </section>
@@ -574,9 +680,9 @@
                 </aside>
                 <nav class="flex flex-col gap-2 min-[640px]:gap-4">
                     <h6 class="text-(--text-muted) uppercase">Pages</h6>
-                    <a class="">Projects</a>
-                    <a class="">Services</a>
-                    <a class="">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
                     <a
                         href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
                         class="btn"
@@ -585,9 +691,8 @@
                 </nav>
                 <nav class="flex flex-col gap-2 min-[640px]:gap-4">
                     <h6 class="text-(--text-muted) uppercase">Legal</h6>
-                    <a class="">Terms of use</a>
-                    <a class="">Privacy policy</a>
-                    <a class="">Cookie policy</a>
+                    <a href="/terms-of-use">Terms of Use</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
                 </nav>
             </div>
         </footer>

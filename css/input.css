@@ -640,3 +640,53 @@ footer nav a:nth-of-type(3) {
 footer nav a:hover {
     background-position: 0 100%;
 }
+
+/* ======================================================
+   Terms of Use
+   ====================================================== */
+
+#terms-of-use h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+#terms-of-use h2 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+#terms-of-use p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* ======================================================
+   Privacy Policy
+   ====================================================== */
+
+#privacy-policy h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+#privacy-policy h2 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+#privacy-policy p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
