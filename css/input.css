@@ -2,3 +2,641 @@
 @plugin "daisyui" {
     themes: dark --default;
 }
+
+/* ==========================================================
+   ISKRA DESIGN SYSTEM
+   ========================================================== */
+
+:root {
+    /* ======================================================
+       BACKGROUNDS
+       ====================================================== */
+
+    --bg-primary: #0a0a0a;
+    --bg-surface: #18181b;
+
+    /* ======================================================
+       BRAND
+       ====================================================== */
+
+    --color-primary: #ff6a00;
+    --color-primary-hover: #ff8200;
+
+    --color-secondary: #ffc72c;
+    --color-accent: #ff2d00;
+
+    /* ======================================================
+       TEXT
+       ====================================================== */
+
+    --text-primary: #ffffff;
+    --text-secondary: #cfcfcf;
+    --text-muted: #8a8a8a;
+
+    /* ======================================================
+       BORDERS
+       ====================================================== */
+
+    --border-primary: #2a2a2a;
+}
+
+html,
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 80px;
+}
+
+/* ======================================================
+   Colors
+   ====================================================== */
+
+/* Background */
+
+.bg-primary {
+    background-color: var(--bg-primary);
+}
+
+.bg-surface {
+    background-color: var(--bg-surface);
+}
+
+.bg-color-primary {
+    background-color: var(--color-primary);
+}
+
+.bg-color-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.bg-color-secondary {
+    background-color: var(--color-secondary);
+}
+
+.bg-color-accent {
+    background-color: var(--color-accent);
+}
+
+/* Text */
+
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-color-primary {
+    color: var(--color-primary);
+}
+
+.text-color-secondary {
+    color: var(--color-secondary);
+}
+
+.text-color-accent {
+    color: var(--color-accent);
+}
+
+/* Borders */
+
+.border-primary {
+    border-color: var(--border-primary);
+}
+
+.border-color-primary {
+    border-color: var(--color-primary);
+}
+
+.border-color-secondary {
+    border-color: var(--color-secondary);
+}
+
+.border-color-accent {
+    border-color: var(--color-accent);
+}
+
+/* ======================================================
+   Components
+   ====================================================== */
+
+.btn {
+    background-color: var(--color-primary);
+    border-radius: 9999px;
+}
+.btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* ======================================================
+   Navbar
+   ====================================================== */
+
+.website-navbar {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.website-navbar.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.website-navbar.bg-surface {
+    background: rgba(24, 24, 27, 0.75);
+}
+
+.website-navbar .btn,
+.website-navbar a,
+.website-navbar summary {
+    font-size: 20px;
+}
+
+.website-navbar .btn {
+    padding: 22px 22px;
+    font-size: 18px;
+}
+
+.website-navbar ul li {
+    padding: 10px 18px;
+}
+
+.website-navbar ul li:nth-child(1) a {
+    color: transparent;
+    background: linear-gradient(to right, var(--color-accent) 50%, var(--text-primary) 50%) 100%;
+    background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position 0.3s;
+}
+.website-navbar ul li:nth-child(2) a {
+    color: transparent;
+    background: linear-gradient(to right, var(--color-primary) 50%, var(--text-primary) 50%) 100%;
+    background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position 0.3s;
+}
+.website-navbar ul li:nth-child(3) a {
+    color: transparent;
+    background: linear-gradient(to right, var(--color-secondary) 50%, var(--text-primary) 50%) 100%;
+    background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position 0.3s;
+}
+.website-navbar ul li a:hover {
+    background-position: 0 100%;
+}
+
+#navToggle {
+    transition: 0.3s;
+}
+#navToggle:hover {
+    color: var(--text-muted);
+}
+
+/* Mobile Navigation */
+
+.mobile-nav {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-surface);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.mobile-nav li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.mobile-nav li:hover {
+    color: var(--text-muted);
+}
+
+.mobile-nav .btn {
+    font-size: 16px;
+}
+@media (min-width: 640px) {
+    .mobile-nav .btn {
+        font-size: 24px;
+        padding: 30px;
+    }
+}
+
+.mobile-nav.is-open {
+    height: 100%;
+    padding-top: 180px;
+}
+
+@media (max-width: 539px) {
+    .mobile-nav.is-open {
+        padding-top: 140px;
+    }
+}
+
+/* ======================================================
+   Hero
+   ====================================================== */
+
+@media (max-width: 540px) {
+    #hero {
+        padding-top: 50px;
+    }
+}
+
+.tilt-card {
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+
+    transform: perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+
+    transition: transform 500ms ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.tilt-card:hover {
+    transition: transform 60ms linear;
+}
+
+/* ======================================================
+   Client Logos
+   ====================================================== */
+
+.client-logo {
+    height: 30px;
+    width: auto;
+}
+
+@media (min-width: 390px) {
+    .client-logo {
+        height: 40px;
+    }
+}
+@media (min-width: 600px) {
+    .client-logo {
+        height: 60px;
+    }
+}
+@media (min-width: 1025px) {
+    .client-logo {
+        height: 80px;
+    }
+}
+
+/* ======================================================
+   Projects
+   ====================================================== */
+
+.project-image img {
+    transition: 0.3s;
+}
+.project-image:hover img {
+    scale: 103%;
+}
+
+.project-image:hover p {
+    transition: none;
+}
+
+/* Fonts */
+.project-card {
+    gap: 20px;
+}
+.project-text {
+    gap: 12px;
+}
+.project-name {
+    font-size: 20px;
+}
+.project-desc {
+    font-size: 14px;
+}
+
+@media (min-width: 1024px) {
+    .project-card {
+        gap: 20px;
+    }
+    .project-text {
+        gap: 12px;
+    }
+    .project-name {
+        font-size: 28px;
+    }
+    .project-desc {
+        font-size: 16px;
+    }
+}
+@media (min-width: 1400px) {
+    .project-card {
+        gap: 24px;
+    }
+    .project-text {
+        gap: 16px;
+    }
+    .project-name {
+        font-size: 36px;
+    }
+    .project-desc {
+        font-size: 18px;
+    }
+}
+
+/* ======================================================
+   Services
+   ====================================================== */
+
+.service-name {
+    font-size: clamp(20px, 3.5vw, 30px);
+}
+
+/* ======================================================
+   About
+   ====================================================== */
+
+.about-text {
+    font-size: clamp(16px, 3.5vw, 30px);
+}
+
+/* ======================================================
+   FAQ
+   ====================================================== */
+
+.faq-question {
+    font-size: clamp(18px, 4vw, 36px);
+    padding: 20px;
+    padding-right: 48px;
+}
+.faq-answer {
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: 300;
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+#faq .collapse-arrow > .collapse-title::after {
+    width: 0.8rem;
+    height: 0.8rem;
+    inset-inline-end: 1.4rem;
+}
+
+@media (min-width: 550px) {
+    .faq-question {
+        padding: 32px;
+    }
+    .faq-answer {
+        padding-left: 32px;
+    }
+    #faq .collapse-arrow > .collapse-title::after {
+        width: 0.8rem;
+        height: 0.8rem;
+        inset-inline-end: 1.8rem;
+    }
+}
+@media (min-width: 1000px) {
+    .faq-question {
+        padding: 40px;
+    }
+    .faq-answer {
+        padding-left: 40px;
+    }
+    #faq .collapse-arrow > .collapse-title::after {
+        width: 1rem;
+        height: 1rem;
+        inset-inline-end: 2.5rem;
+    }
+}
+
+/* ======================================================
+   Section & Container
+   ====================================================== */
+
+.section {
+    padding: 60px 0;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 24px;
+    max-width: 1800px;
+}
+@media (min-width: 450px) {
+    .section {
+        padding: 80px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section {
+        padding: 140px 0;
+    }
+    .container {
+        padding: 0 80px;
+    }
+}
+
+/* ======================================================
+   Small about
+   ====================================================== */
+
+#small-about #about-accordion summary {
+    padding: 16px 12px;
+}
+
+@media (max-width: 1300px) {
+    #small-about #about-accordion summary {
+        font-size: 30px;
+    }
+    #small-about #about-accordion details div {
+        font-size: 18px;
+    }
+}
+@media (max-width: 1100px) {
+    #small-about #about-accordion summary {
+        font-size: 26px;
+    }
+    #small-about #about-accordion details div {
+        padding: 16px 12px;
+    }
+}
+@media (max-width: 706px) {
+    #small-about #about-accordion summary {
+        padding: 12px 8px;
+        font-size: 20px;
+    }
+    #small-about #about-accordion details div {
+        padding: 16px 8px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 490px) {
+    #small-about #about-accordion summary {
+        padding: 10px 6px;
+        font-size: 1rem;
+    }
+    #small-about #about-accordion details div {
+        padding: 16px 6px;
+        font-size: 12px;
+    }
+}
+/* Accordion */
+
+.collapse-arrow > .collapse-title::after {
+    width: 1rem;
+    height: 1rem;
+    inset-inline-end: 2.5rem;
+}
+
+#about-accordion > details {
+    border: 0;
+}
+#about-accordion summary {
+    padding: 12px;
+    font-weight: 500;
+}
+
+@media (max-width: 706px) {
+    .collapse-arrow > .collapse-title::after {
+        width: 0.8rem;
+        height: 0.8rem;
+        inset-inline-end: 1rem;
+    }
+}
+@media (max-width: 490px) {
+    .collapse-arrow > .collapse-title::after {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+}
+
+.accordion details:nth-child(3n + 1) {
+    --accordion-hover-color: var(--color-accent);
+}
+
+.accordion details:nth-child(3n + 2) {
+    --accordion-hover-color: var(--color-primary);
+}
+
+.accordion details:nth-child(3n) {
+    --accordion-hover-color: var(--color-secondary);
+}
+
+.accordion details .collapse-title {
+    transition: color 0.2s ease;
+}
+
+.accordion details.collapse-arrow > .collapse-title::after {
+    transition:
+        color 0.2s ease,
+        translate 0.2s ease;
+}
+
+.accordion details:hover .collapse-title {
+    color: var(--text-secondary);
+}
+
+.accordion details:hover > .collapse-title::after {
+    color: var(--accordion-hover-color);
+    translate: 0 3px;
+}
+
+/* ======================================================
+   CTA
+   ====================================================== */
+
+#cta .btn {
+    font-size: clamp(16px, 2.6vw, 20px);
+    padding: 23px;
+}
+
+#cta h2 {
+    font-size: clamp(28px, 6.2vw, 60px);
+    line-height: normal;
+}
+
+#cta p {
+    font-size: clamp(16px, 2.7vw, 24px);
+}
+
+@media (min-width: 570px) {
+    #cta .btn {
+        padding: 25px;
+    }
+}
+@media (min-width: 750px) {
+    #cta .btn {
+        padding: 30px;
+    }
+}
+
+/* ======================================================
+   Footer
+   ====================================================== */
+
+footer nav .btn {
+    transition: 0.2s;
+    font-size: 18px;
+    padding: 20px;
+    margin-left: 0;
+}
+
+@media (min-width: 640px) {
+    footer nav .btn {
+        font-size: 24px;
+        padding: 25px;
+        margin-left: -25px;
+    }
+}
+
+footer nav a:nth-of-type(1) {
+    color: transparent;
+    background: linear-gradient(to right, var(--color-accent) 50%, var(--text-primary) 50%) 100%;
+    background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+}
+footer nav a:nth-of-type(2) {
+    color: transparent;
+    background: linear-gradient(to right, var(--color-primary) 50%, var(--text-primary) 50%) 100%;
+    background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+}
+footer nav a:nth-of-type(3) {
+    color: transparent;
+    background: linear-gradient(to right, var(--color-secondary) 50%, var(--text-primary) 50%) 100%;
+    background-clip: text;
+    background-size: 200% 100%;
+    transition: background-position 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer nav a:hover {
+    background-position: 0 100%;
+}
