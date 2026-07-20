@@ -110,17 +110,21 @@
                             class="h-2/5 mt-3 min-[540px]:mt-4 min-[1280px]:mt-5 hidden min-[391px]:block" />
                     </a>
                 </div>
-                <div class="navbar-end hidden lg:flex w-fit">
+                <div
+                    data-animate="navbar"
+                    class="navbar-end hidden lg:flex w-fit">
                     <ul class="flex justify-center items-center px-1">
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About</a></li>
                     </ul>
-                    <a
-                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
-                        class="btn"
-                        >Contact</a
-                    >
+                    <div>
+                        <a
+                            href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                            class="btn"
+                            >Contact</a
+                        >
+                    </div>
                 </div>
                 <button
                     tabindex="0"
@@ -167,17 +171,23 @@
                 <div class="container">
                     <div
                         class="flex lg:justify-between lg:items-center justify-start items-start gap-20 lg:gap-5 flex-col lg:flex-row">
-                        <div class="w-full lg:w-2/3 flex justify-start items-center">
+                        <div
+                            data-animate="hero"
+                            class="w-full lg:w-2/3 flex justify-start items-center">
                             <h1
                                 class="w-full font-medium text-2xl min-[334px]:text-3xl min-[391px]:text-4xl min-[540px]:text-5xl min-[1036px]:text-6xl xl:text-[78px] 2xl:text-[86px]">
                                 Iskra is a UX-focused web development agency
                             </h1>
                         </div>
-                        <div class="flex justify-center w-full lg:w-2/6 tilt-card">
-                            <img
-                                src="assets/images/hero-image.png"
-                                alt="Website showcase"
-                                class="w-1/2 lg:w-full" />
+                        <div
+                            data-animate="hero"
+                            class="flex justify-center w-full lg:w-2/6">
+                            <div class="flex w-full justify-center tilt-card">
+                                <img
+                                    src="assets/images/hero-image.png"
+                                    alt="Website showcase"
+                                    class="w-1/2 lg:w-full" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -193,6 +203,7 @@
                         <div
                             class="max-[491px]:w-full max-[570px]:w-2/3 max-[850px]:w-1/2 w-1/3 max-[850px]:order-2">
                             <div
+                                data-animate="fade-up"
                                 id="about-accordion"
                                 class="w-full join join-vertical accordion">
                                 <details
@@ -300,6 +311,7 @@
                             </div>
                         </div>
                         <div
+                            data-animate="fade-up"
                             class="max-[452px]:w-full max-[850px]:w-2/3 max-[1212px]:w-[60%] w-1/2 max-[850px]:order-1">
                             <h2
                                 class="text-left text-xl min-[543px]:text-2xl min-[706px]:text-3xl min-[850px]:text-4xl leading-6 min-[543px]:leading-8 min-[706px]:leading-11">
@@ -317,6 +329,7 @@
                     <div
                         class="w-full flex flex-col justify-center items-center gap-4 min-[450px]:gap-6 md:gap-10">
                         <div
+                            data-animate="fade-up"
                             class="w-fit flex justify-center items-center gap-8 min-[500px]:gap-15 min-[800px]:gap-20 min-[880px]:gap-35 min-[1100px]:gap-40 min-[1280px]:gap-50 p-6 md:p-10">
                             <img
                                 class="client-logo"
@@ -348,6 +361,7 @@
                             <div
                                 class="w-full flex flex-col justify-start items-center gap-20 min-[768px]:gap-40">
                                 <a
+                                    data-animate="fade-up"
                                     class="w-full flex flex-col justify-start items-start project-card cursor-pointer project-image">
                                     <div class="relative w-full overflow-hidden">
                                         <img
@@ -369,6 +383,7 @@
                                     </div>
                                 </a>
                                 <a
+                                    data-animate="fade-up"
                                     href="https://www.laurusnobilisrent.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -391,6 +406,7 @@
                             <div
                                 class="w-full flex flex-col justify-start items-center gap-20 min-[768px]:gap-40">
                                 <a
+                                    data-animate="fade-up"
                                     href="https://www.tregerteam.hr/atc/"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -411,6 +427,7 @@
                                     </div>
                                 </a>
                                 <a
+                                    data-animate="fade-up"
                                     href="https://rinobago.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -430,6 +447,7 @@
                             </div>
                         </div>
                         <a
+                            data-animate="fade-up"
                             href="https://www.tregerteam.hr"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -458,6 +476,7 @@
                         class="flex flex-col justify-center items-center gap-10 min-[500px]:gap-15 min-[600px]:gap-20">
                         <h2 class="font-bold text-[clamp(36px,8.7vw,96px)]">Services</h2>
                         <div
+                            data-animate="fade-up"
                             class="flex flex-col min-[600px]:flex-row justify-center items-center min-[600px]:gap-5 w-full">
                             <div class="flex flex-col items-start w-full justify-center">
                                 <p
@@ -508,7 +527,9 @@
                     <div
                         class="relative z-10 flex flex-col justify-start items-start gap-10 min-[500px]:gap-15 min-[600px]:gap-20 w-full min-[490px]:w-4/5 min-[950px]:w-2/3">
                         <h2 class="text-[clamp(36px,8.7vw,96px)] font-bold">About Us</h2>
-                        <p class="w-full about-text leading-normal">
+                        <p
+                            data-animate="fade-up"
+                            class="w-full about-text leading-normal">
                             We are Iskra, a web development and design agency founded in Zagreb,
                             Croatia. We build sharp, conversion-focused websites for brands that
                             need more than a nice first impression. From strategy and UX to design,
@@ -536,7 +557,9 @@
                     <div
                         class="flex flex-col justify-center items-center gap-10 min-[500px]:gap-15 min-[600px]:gap-20">
                         <h2 class="text-[clamp(36px,8.7vw,96px)] font-bold">FAQ</h2>
-                        <div class="w-full join join-vertical accordion">
+                        <div
+                            data-animate="fade-up"
+                            class="w-full join join-vertical accordion">
                             <details
                                 class="collapse collapse-arrow border border-(--border-primary) join-item"
                                 name="faq">
@@ -637,6 +660,7 @@
                 <div class="container">
                     <div class="w-full flex flex-col justify-center items-center">
                         <div
+                            data-animate="fade-up"
                             class="rounded-2xl bg-(--bg-surface) max-w-300 p-8 min-[440px]:p-10 min-[535px]:p-15 min-[770px]:p-20 flex justify-center items-center text-center flex-col gap-8 min-[565px]:gap-10 min-[990px]:gap-15">
                             <div
                                 class="flex flex-col justify-center items-center w-full gap-2 min-[390px]:gap-5 min-[1200px]:gap-8">
@@ -696,6 +720,9 @@
                 </nav>
             </div>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
         <script
             type="module"
             src="js/index.js"></script>
