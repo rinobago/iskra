@@ -14,11 +14,15 @@ mm.add("(min-width: 1024px)", () => {
         Boolean,
     );
 
-    const introTimeline = gsap.timeline();
+    // Hide the items before revealing their CSS-hidden parent.
+    gsap.set(navbarItems, { autoAlpha: 0, y: 15 });
+    gsap.set(navbar, { autoAlpha: 1 });
 
-    introTimeline.from(navbarItems, {
-        opacity: 0,
-        y: 15,
+    const introTimeline = gsap.timeline({ paused: true, delay: 0.25 });
+
+    introTimeline.to(navbarItems, {
+        autoAlpha: 1,
+        y: 0,
         duration: 0.7,
         ease: "power3.out",
         stagger: 0.06,
@@ -32,7 +36,7 @@ mm.add("(min-width: 1024px)", () => {
             .from(
                 heroText,
                 {
-                    opacity: 0,
+                    autoAlpha: 0,
                     y: 20,
                     duration: 0.85,
                     ease: "power3.out",
@@ -42,7 +46,7 @@ mm.add("(min-width: 1024px)", () => {
             .from(
                 heroImage,
                 {
-                    opacity: 0,
+                    autoAlpha: 0,
                     rotateY: 35,
                     duration: 2,
                     ease: "power3.out",
@@ -50,6 +54,37 @@ mm.add("(min-width: 1024px)", () => {
                 "<+=0.4",
             );
     }
+
+    let fontsReady = false;
+    let disposed = false;
+    let started = false;
+    let startFrame;
+
+    const playIntro = () => {
+        if (disposed || started || !fontsReady || document.readyState !== "complete") return;
+        if (document.hidden) return;
+
+        cancelAnimationFrame(startFrame);
+        startFrame = requestAnimationFrame(() => {
+            if (disposed || document.hidden) return;
+            started = true;
+            introTimeline.play();
+        });
+    };
+
+    window.addEventListener("load", playIntro);
+    document.addEventListener("visibilitychange", playIntro);
+    document.fonts.ready.then(() => {
+        fontsReady = true;
+        playIntro();
+    });
+
+    return () => {
+        disposed = true;
+        cancelAnimationFrame(startFrame);
+        window.removeEventListener("load", playIntro);
+        document.removeEventListener("visibilitychange", playIntro);
+    };
 });
 
 mm.add("(max-width: 1023px)", () => {
@@ -66,7 +101,7 @@ mm.add("(max-width: 1023px)", () => {
 
     heroTimeline
         .from(heroText, {
-            opacity: 0,
+            autoAlpha: 0,
             y: 20,
             duration: 0.85,
             ease: "power3.out",
@@ -74,7 +109,7 @@ mm.add("(max-width: 1023px)", () => {
         .from(
             heroImage,
             {
-                opacity: 0,
+                autoAlpha: 0,
                 rotateY: 35,
                 duration: 2,
                 ease: "power3.out",
@@ -86,7 +121,7 @@ mm.add("(max-width: 1023px)", () => {
 if (fadeUpElements.length) {
     fadeUpElements.forEach((element, index) => {
         gsap.from(element, {
-            opacity: 0,
+            autoAlpha: 0,
             y: 30,
             duration: 1,
             ease: "power3.out",

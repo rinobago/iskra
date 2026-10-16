@@ -557,6 +557,9 @@
   .collapse {
     visibility: collapse;
   }
+  .visible {
+    visibility: visible;
+  }
   .collapse-title {
     @layer daisyui.l1.l2.l3 {
       grid-column-start: 1;
@@ -2051,6 +2054,9 @@ footer nav a:hover {
   font-weight: 300;
   line-height: 1.6;
   margin-bottom: 1.25rem;
+}
+[data-animate="navbar"], [data-animate="hero"], [data-animate="fade-up"] {
+  visibility: hidden;
 }
 @layer base {
   :where(:root),:root:has(input.theme-controller[value=dark]:checked),[data-theme=dark] {

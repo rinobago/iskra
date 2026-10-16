@@ -690,3 +690,13 @@ footer nav a:hover {
     line-height: 1.6;
     margin-bottom: 1.25rem;
 }
+
+/* ======================================================
+   Animation
+   ====================================================== */
+
+[data-animate="navbar"],
+[data-animate="hero"],
+[data-animate="fade-up"] {
+    visibility: hidden;
+}
