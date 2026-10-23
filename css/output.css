@@ -557,9 +557,6 @@
   .collapse {
     visibility: collapse;
   }
-  .visible {
-    visibility: visible;
-  }
   .collapse-title {
     @layer daisyui.l1.l2.l3 {
       grid-column-start: 1;
