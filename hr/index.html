@@ -126,7 +126,7 @@
                         id: "essential",
                         label: "Essential",
                         description:
-                            "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like setting your privacy preferences.</p>",
+                            "<p>This category is intended only for storage strictly necessary to remember your requested privacy preferences.</p>",
                         required: true,
                         onAccept: function () {
                             console.log("Add logic for the required Essential consent type here");
@@ -136,7 +136,7 @@
                         id: "analytics",
                         label: "Analytics",
                         description:
-                            "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+                            "<p>No analytics tracker is connected to this option. Choosing it does not authorise future tracking without further information and a new consent request.</p>",
                         required: false,
                         gtag: "analytics_storage",
                     },
@@ -144,7 +144,7 @@
                 text: {
                     prompt: {
                         description:
-                            "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+                            "<p>This website does not use analytics or advertising trackers. See our <a href='/en/privacy-policy/'>Privacy Policy</a> for information about external file delivery and preference storage.</p>",
                         acceptAllButtonText: "Accept all",
                         acceptAllButtonAccessibleLabel: "Accept all cookies",
                         rejectNonEssentialButtonText: "Reject non-essential",
@@ -155,7 +155,7 @@
                     preferences: {
                         title: "Customize your cookie preferences",
                         description:
-                            "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+                            "<p>No optional tracking tool is currently used. The Analytics option is inactive. These settings do not control email processing or requests needed to load external files.</p>",
                         saveButtonText: "Save and close",
                         saveButtonAccessibleLabel: "Save your cookie preferences",
                         creditLinkText: "Get this banner for free",
