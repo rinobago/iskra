@@ -594,6 +594,52 @@ body {
    Footer
    ====================================================== */
 
+footer .footer {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+    align-items: start;
+}
+
+footer .footer > aside,
+footer .footer > nav {
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+    align-content: start;
+}
+
+footer .footer > aside {
+    justify-items: start;
+}
+
+footer .footer > nav {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+@media (min-width: 640px) {
+    footer .footer {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    footer .footer > nav {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 780px) {
+    footer .footer > aside > a > img:first-child {
+        height: 5rem;
+        margin-right: 0.8rem;
+    }
+
+    footer .footer > aside > a > img:last-child {
+        height: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
 footer nav .btn {
     transition: 0.2s;
     font-size: 18px;
@@ -605,7 +651,7 @@ footer nav .btn {
     footer nav .btn {
         font-size: 24px;
         padding: 25px;
-        margin-left: -25px;
+        margin-left: 0;
     }
 }
 
