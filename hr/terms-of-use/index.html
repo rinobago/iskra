@@ -1,32 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="hr">
     <head>
         <meta charset="UTF-8" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
-        <title>Terms of Use | Iskra</title>
+        <title>Uvjeti korištenja | Iskra</title>
         <meta
             name="description"
-            content="Read the terms of use for Iskra, a UX-focused web design and development agency founded in Zagreb, Croatia." />
+            content="Pročitajte uvjete korištenja web stranice Iskra: informacije o projektnim upitima, privatnosti, intelektualnom vlasništvu i pravima korisnika." />
         <link
             rel="canonical"
-            href="https://byiskra.com/en/terms-of-use/" />
+            href="https://byiskra.com/hr/terms-of-use/" />
         <meta
             property="og:type"
             content="website" />
         <meta
             property="og:title"
-            content="Terms of Use | Iskra" />
+            content="Uvjeti korištenja | Iskra" />
         <meta
             property="og:description"
-            content="Read the terms of use for Iskra, a UX-focused web design and development agency." />
+            content="Uvjeti korištenja web stranice Iskra, kontakt s operatorom, projektni upiti, zaštita osobnih podataka i zakonom zajamčena prava." />
         <meta
             property="og:image"
             content="https://byiskra.com/assets/images/IskraFullLogo.png" />
         <meta
             property="og:url"
-            content="https://byiskra.com/en/terms-of-use/" />
+            content="https://byiskra.com/hr/terms-of-use/" />
         <meta
             property="og:site_name"
             content="Iskra" />
@@ -76,19 +76,19 @@
                 consentTypes: [
                     {
                         id: "essential",
-                        label: "Essential",
+                        label: "Nužno",
                         description:
-                            "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like setting your privacy preferences.</p>",
+                            "<p>Ova kategorija obuhvaća samo pohranu koja je strogo nužna za pamćenje postavki privatnosti koje ste zatražili.</p>",
                         required: true,
                         onAccept: function () {
-                            console.log("Add logic for the required Essential consent type here");
+                            console.log("Ovdje dodajte logiku za obveznu kategoriju nužne pohrane");
                         },
                     },
                     {
                         id: "analytics",
-                        label: "Analytics",
+                        label: "Analitika",
                         description:
-                            "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+                            "<p>S ovom mogućnošću nije povezan nijedan alat za analitičko praćenje. Njezin odabir ne dopušta buduće praćenje bez dodatnih informacija i novog zahtjeva za privolu.</p>",
                         required: false,
                         gtag: "analytics_storage",
                     },
@@ -96,22 +96,22 @@
                 text: {
                     prompt: {
                         description:
-                            "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
-                        acceptAllButtonText: "Accept all",
-                        acceptAllButtonAccessibleLabel: "Accept all cookies",
-                        rejectNonEssentialButtonText: "Reject non-essential",
-                        rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
-                        preferencesButtonText: "Preferences",
-                        preferencesButtonAccessibleLabel: "Toggle preferences",
+                            "<p>Ova web stranica ne koristi analitičke alate ni alate za oglašivačko praćenje. Informacije o isporuci vanjskih datoteka i pohrani postavki potražite u dokumentu <a href='/hr/privacy-policy/'>Pravila privatnosti</a>.</p>",
+                        acceptAllButtonText: "Prihvati sve",
+                        acceptAllButtonAccessibleLabel: "Prihvati sve kolačiće",
+                        rejectNonEssentialButtonText: "Odbij nenužno",
+                        rejectNonEssentialButtonAccessibleLabel: "Odbij sve nenužne kolačiće",
+                        preferencesButtonText: "Postavke",
+                        preferencesButtonAccessibleLabel: "Otvori ili zatvori postavke",
                     },
                     preferences: {
-                        title: "Customize your cookie preferences",
+                        title: "Prilagodite postavke kolačića",
                         description:
-                            "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
-                        saveButtonText: "Save and close",
-                        saveButtonAccessibleLabel: "Save your cookie preferences",
-                        creditLinkText: "Get this banner for free",
-                        creditLinkAccessibleLabel: "Get this banner for free",
+                            "<p>Trenutačno se ne koristi nijedan neobvezni alat za praćenje. Opcija Analitika nije aktivna. Ove postavke ne upravljaju obradom e-pošte ni zahtjevima za učitavanje vanjskih datoteka.</p>",
+                        saveButtonText: "Spremi i zatvori",
+                        saveButtonAccessibleLabel: "Spremi postavke kolačića",
+                        creditLinkText: "Preuzmite ovu obavijest besplatno",
+                        creditLinkAccessibleLabel: "Preuzmite ovu obavijest besplatno",
                     },
                 },
             });
@@ -125,15 +125,15 @@
             <div class="navbar container h-full justify-between">
                 <div class="navbar-start w-auto h-full">
                     <a
-                        href="/en/#top"
+                        href="/hr/"
                         class="flex justify-center items-center h-1/2 min-[540px]:h-2/3 min-[1280px]:h-full">
                         <img
                             src="/assets/images/IskraLogo.png"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-full mr-2 min-[540px]:mr-3 min-[1280px]:mr-4" />
                         <img
                             src="/assets/images/iskra-text-logo.svg"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-2/5 mt-3 min-[540px]:mt-4 min-[1280px]:mt-5 hidden min-[391px]:block" />
                     </a>
                 </div>
@@ -141,15 +141,15 @@
                     data-animate="navbar"
                     class="navbar-end hidden lg:flex w-fit">
                     <ul class="flex justify-center items-center px-1">
-                        <li><a href="/en/#projects">Projects</a></li>
-                        <li><a href="/en/#services">Services</a></li>
-                        <li><a href="/en/#about">About</a></li>
+                        <li><a href="/hr/#projects">Projekti</a></li>
+                        <li><a href="/hr/#services">Usluge</a></li>
+                        <li><a href="/hr/#about">O nama</a></li>
                     </ul>
                     <div>
                         <a
-                            href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                            href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                             class="btn"
-                            >Contact</a
+                            >Kontakt</a
                         >
                     </div>
                 </div>
@@ -178,14 +178,14 @@
             <ul
                 tabindex="-1"
                 class="flex flex-col justify-start items-center gap-8 sm:gap-10 text-base sm:text-2xl">
-                <li><a href="/en/#projects">Projects</a></li>
-                <li><a href="/en/#services">Services</a></li>
-                <li><a href="/en/#about">About</a></li>
+                <li><a href="/hr/#projects">Projekti</a></li>
+                <li><a href="/hr/#services">Usluge</a></li>
+                <li><a href="/hr/#about">O nama</a></li>
                 <li>
                     <a
-                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                         class="btn"
-                        >Contact</a
+                        >Kontakt</a
                     >
                 </li>
             </ul>
@@ -194,114 +194,193 @@
         <main id="terms-of-use">
             <section class="section">
                 <div class="container">
-                    <h1>Terms of Use</h1>
-                    <p>Last updated: July 18, 2026</p>
-
+                    <h1>Uvjeti korištenja</h1>
+                    <p>Posljednje ažuriranje: 23. listopada 2026.</p>
                     <p>
-                        These Terms of Use govern your use of this website and any related content,
-                        pages, or services provided by Iskra. By using this website, you agree to
-                        these terms. If you do not agree, please do not use the website.
+                        Ovim se uvjetima uređuje korištenje web stranice byiskra.com i njezina
+                        sadržaja. Odnose se na ovu informativnu web stranicu, dok je za usluge na
+                        pojedinom projektu potreban zaseban dogovor. Prava zajamčena prisilnim
+                        propisima uvijek se primjenjuju.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Use of This Website</h2>
+                    <h2>Tko upravlja web stranicom</h2>
                     <p>
-                        You may use this website for personal, informational, and business inquiry
-                        purposes. You agree not to misuse the website, attempt to disrupt its
-                        functionality, copy content without permission, or use the website for any
-                        unlawful purpose.
+                        Iskra je brend kojim upravlja Rino Bago, a ne zasebno registrirano trgovačko
+                        društvo. U ovim se uvjetima izrazi „Iskra”, „mi” i „nas” odnose na Rina
+                        Bagu. Možete mu se obratiti na adresu
+                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Services and Information</h2>
+                    <h2>Korištenje web stranice</h2>
                     <p>
-                        The information on this website is provided to describe our work, services,
-                        and general approach. It does not create a client relationship, guarantee
-                        project availability, or form a binding agreement unless confirmed in a
-                        separate written contract.
+                        Web stranicu možete pregledavati radi informiranja i slanja upita o
+                        projektima. Nije dopušteno nezakonito korištenje, ometanje rada stranice,
+                        pokušaj neovlaštenog pristupa ni povreda tuđih prava. Ovi uvjeti ne
+                        ograničavaju radnje dopuštene mjerodavnim pravom.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Intellectual Property</h2>
+                    <h2>Usluge i upiti o projektima</h2>
                     <p>
-                        All text, design, images, graphics, code, branding, and other content on
-                        this website are owned by Iskra or used with permission, unless stated
-                        otherwise. You may not copy, reproduce, modify, distribute, or reuse any
-                        content without prior written permission.
+                        Na ovoj web stranici predstavljamo radove i opisujemo usluge koje možemo
+                        pružiti. Samo pregledavanje stranice ili slanje upita ne predstavlja
+                        narudžbu, ne uspostavlja odnos s klijentom i ne jamči raspoloživost za
+                        projekt. Za svaki je projekt potreban dogovor o opsegu, cijeni i ostalim
+                        bitnim uvjetima.
+                    </p>
+                    <p>
+                        Zaseban ugovor za projekt može se sklopiti u pravno valjanom obliku,
+                        uključujući elektronički oblik kada je dopušten. Ovi uvjeti korištenja ne
+                        zamjenjuju taj ugovor, obvezne predugovorne informacije, prava na raskid ni
+                        druge oblike zaštite potrošača.
+                    </p>
+                    <p>
+                        Molimo navedite točne informacije važne za vaš upit i šaljite samo
+                        materijale koje smijete podijeliti. Za početni upit nije potrebno slati
+                        osjetljive osobne podatke.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Project Inquiries</h2>
+                    <h2>Privatnost i zaštita osobnih podataka</h2>
                     <p>
-                        When you contact us about a project, you are responsible for providing
-                        accurate and relevant information. Submitting an inquiry does not guarantee
-                        that we will accept the project or provide services.
+                        U dokumentu
+                        <a href="/hr/privacy-policy/">Pravila privatnosti</a> objašnjavamo kako
+                        postupamo s osobnim podacima, svrhe i pravne osnove obrade, pružatelje
+                        usluga, kriterije čuvanja podataka i vaša prava. Poveznice za kontakt
+                        otvaraju vašu aplikaciju za e-poštu; na ovoj web stranici nema internetskog
+                        obrasca za kontakt.
+                    </p>
+                    <p>
+                        Korištenje web stranice, čitanje ovih uvjeta ili slanje upita ne predstavlja
+                        automatsku privolu u smislu Opće uredbe o zaštiti podataka (GDPR). Za obradu
+                        koja se temelji na privoli potrebna je zasebna, informirana i dobrovoljna
+                        odluka. Privolu možete povući bez utjecaja na zakonitost ranije obrade. Ovim
+                        se uvjetima ne odričete nijednog prava na zaštitu osobnih podataka.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Third-Party Links</h2>
+                    <h2>Intelektualno vlasništvo</h2>
                     <p>
-                        This website may contain links to third-party websites. We are not
-                        responsible for the content, privacy practices, security, or availability of
-                        external websites. Visiting third-party websites is at your own risk.
+                        Sadržaj web stranice može biti zaštićen autorskim pravom, žigovima i drugim
+                        pravima intelektualnog vlasništva koja pripadaju operatoru stranice ili
+                        odgovarajućim nositeljima prava. Prikazivanje tuđih radova ili obilježja
+                        brenda ne predstavlja prijenos vlasništva nad njima.
+                    </p>
+                    <p>
+                        Web stranicu možete pregledavati, a materijale spremiti ili ispisati za
+                        osobnu uporabu. Za drugo umnožavanje, izmjenu ili distribuciju potrebno je
+                        dopuštenje odgovarajućeg nositelja prava, osim ako su dopušteni mjerodavnim
+                        pravom ili pripadajućom licencijom. Zakonske iznimke, uključujući dopušteno
+                        citiranje, i prava iz licencija otvorenog koda ostaju nepromijenjeni.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>No Warranties</h2>
+                    <h2>Vanjske poveznice</h2>
                     <p>
-                        This website is provided on an “as is” and “as available” basis. We do not
-                        guarantee that the website will always be available, error-free, secure, or
-                        uninterrupted.
+                        Poveznice na druge web stranice služe za dodatno informiranje. Njihovi
+                        operatori upravljaju sadržajem, dostupnošću i uvjetima korištenja. Sama
+                        poveznica ne predstavlja preporuku. Time se ne isključuje odgovornost koju
+                        nam mjerodavno pravo propisuje za vlastito postupanje.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Limitation of Liability</h2>
+                    <h2>Dostupnost i točnost informacija</h2>
                     <p>
-                        To the maximum extent permitted by law, Iskra is not liable for any direct,
-                        indirect, incidental, or consequential damages resulting from your use of
-                        this website or reliance on its content.
+                        Sadržaj web stranice može se mijenjati i može sadržavati pogreške. Ne možemo
+                        jamčiti neprekidnu dostupnost ni rad bez pogrešaka. Molimo obratite nam se
+                        radi potvrde informacija važnih za predloženi projekt.
+                    </p>
+                    <p>
+                        Ništa u ovim uvjetima ne isključuje zakonom propisane standarde, zakonska
+                        jamstva, odgovornost za obmanjujuće izjave ni prava koja proizlaze iz
+                        zasebnog ugovora.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Changes to These Terms</h2>
+                    <h2>Odgovornost i zakonom zajamčena prava</h2>
                     <p>
-                        We may update these Terms of Use from time to time. Any changes will be
-                        posted on this page with an updated date. Continued use of the website after
-                        changes are posted means you accept the revised terms.
+                        Odgovornost povezana s korištenjem ove web stranice određuje se prema
+                        mjerodavnom pravu. Ovim se uvjetima ne isključuje općenito odgovornost za
+                        štetu prouzročenu našim postupanjem.
+                    </p>
+                    <p>
+                        Ništa u ovim uvjetima ne isključuje niti ograničava odgovornost za namjeru,
+                        krajnju nepažnju, prijevaru, smrt ili tjelesnu ozljedu kada se odgovornost
+                        ne može zakonito isključiti, niti drugu odgovornost čije isključenje ili
+                        ograničenje nije dopušteno prisilnim propisima. Vaša potrošačka prava te
+                        prava na pravna sredstva i naknadu štete prema propisima o zaštiti osobnih
+                        podataka ostaju nepromijenjeni.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Contact</h2>
+                    <h2>Mjerodavno pravo i prigovori potrošača</h2>
                     <p>
-                        If you have questions about these Terms of Use, you can contact us at:
-                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>
+                        Na ove se uvjete primjenjuje hrvatsko pravo, uz poštovanje mjerodavnih
+                        prisilnih propisa. Ako ste potrošač, time vam se ne uskraćuje zaštita koju
+                        vam pružaju primjenjive prisilne odredbe prava države vašeg uobičajenog
+                        boravišta. Ovi uvjeti ne ograničavaju vaše pravo na pokretanje postupka pred
+                        nadležnim sudom prema mjerodavnom pravu ni pravo obraćanja nadležnom tijelu.
+                    </p>
+                    <p>
+                        Ako ste potrošač, pisani prigovor možete poslati na adresu
+                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>. Kada se
+                        primjenjuje hrvatsko pravo o zaštiti potrošača, primitak prigovora mora se
+                        potvrditi bez odgađanja, a pisani odgovor dostaviti u roku od 15 dana od
+                        primitka, uz jasno očitovanje o prihvaćanju osnovanosti prigovora. Za
+                        zahtjeve za ostvarivanje prava na zaštitu osobnih podataka vrijede zasebni
+                        rokovi navedeni u Pravilima privatnosti.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Izmjene uvjeta korištenja</h2>
+                    <p>
+                        Ovi se uvjeti mogu ažurirati zbog promjena na web stranici ili u mjerodavnom
+                        pravu. Datum izmjene naveden je na početku dokumenta. Izmjene ne mijenjaju
+                        retroaktivno ugovorene uvjete projekta niti ukidaju već nastala prava. Kada
+                        je za izmjenu potreban vaš pristanak, sam nastavak pregledavanja stranice ne
+                        zamjenjuje taj pristanak.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Kontakt</h2>
+                    <p>
+                        Za pitanja o ovim uvjetima pišite na adresu
+                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>.
                     </p>
                 </div>
             </section>
@@ -311,36 +390,36 @@
             <div class="container footer sm:footer-horizontal text-lg min-[640px]:text-2xl">
                 <aside>
                     <a
-                        href="/en/#top"
+                        href="/hr/"
                         class="flex items-end gap-0">
                         <img
                             src="/assets/images/IskraLogo.png"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-25 mr-4" />
                         <img
                             src="/assets/images/iskra-text-logo.svg"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-10 mb-5" />
                     </a>
                     <p class="text-(--text-muted) font-light mt-3 text-base min-[640px]:text-lg">
-                        © 2026 Iskra. All rights reserved.
+                        © 2026 Iskra. Sva prava pridržana.
                     </p>
                 </aside>
                 <nav class="flex flex-col gap-2 min-[640px]:gap-4">
-                    <h6 class="text-(--text-muted) uppercase">Pages</h6>
-                    <a href="/en/#projects">Projects</a>
-                    <a href="/en/#services">Services</a>
-                    <a href="/en/#about">About</a>
+                    <h6 class="text-(--text-muted) uppercase">Stranice</h6>
+                    <a href="/hr/#projects">Projekti</a>
+                    <a href="/hr/#services">Usluge</a>
+                    <a href="/hr/#about">O nama</a>
                     <a
-                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                         class="btn"
-                        >Contact</a
+                        >Kontakt</a
                     >
                 </nav>
                 <nav class="flex flex-col gap-2 min-[640px]:gap-4">
-                    <h6 class="text-(--text-muted) uppercase">Legal</h6>
-                    <a href="/en/terms-of-use/">Terms of Use</a>
-                    <a href="/en/privacy-policy/">Privacy Policy</a>
+                    <h6 class="text-(--text-muted) uppercase">Pravne informacije</h6>
+                    <a href="/hr/terms-of-use/">Uvjeti korištenja</a>
+                    <a href="/hr/privacy-policy/">Pravila privatnosti</a>
                 </nav>
             </div>
         </footer>

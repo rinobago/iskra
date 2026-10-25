@@ -5,35 +5,42 @@
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
-        <title>Iskra | UX Design & Web Development</title>
+        <title>Izrada web stranica i web dizajn po mjeri | Iskra</title>
         <meta
             name="description"
-            content="Iskra is a UX-focused web design and development agency
-        founded in Zagreb, Croatia. We build sharp, conversion-focused websites, landing pages,
-        e-commerce experiences, and digital products that help brands grow online." />
+            content="Izrada web stranica i web dizajn po mjeri. Iskra izrađuje brze, responzivne web stranice i web trgovine za vaše poslovanje. Zatražite ponudu." />
         <link
             rel="icon"
             type="image/png"
             href="/assets/images/favicon.png" />
         <link
             rel="canonical"
+            href="https://byiskra.com/hr/" />
+        <link
+            rel="alternate"
+            hreflang="en"
             href="https://byiskra.com/en/" />
+        <link
+            rel="alternate"
+            hreflang="hr"
+            href="https://byiskra.com/hr/" />
+
 
         <meta
             property="og:type"
             content="website" />
         <meta
             property="og:title"
-            content="Iskra | UX Design & Web Development" />
+            content="Izrada web stranica i web dizajn po mjeri | Iskra" />
         <meta
             property="og:description"
-            content="UX-focused web design and development agency creating sharp, fast, conversion-focused websites for brands that want stronger credibility and better results online." />
+            content="Web stranice prilagođene vašem poslovanju: dizajn po mjeri, responzivna izrada i jasan put od posjeta do upita. Pogledajte Iskrine projekte." />
         <meta
             property="og:image"
             content="https://byiskra.com/assets/images/IskraFullLogo.png" />
         <meta
             property="og:url"
-            content="https://byiskra.com/en/" />
+            content="https://byiskra.com/hr/" />
         <meta
             property="og:site_name"
             content="Iskra" />
@@ -43,43 +50,86 @@
             content="summary_large_image" />
         <meta
             name="twitter:title"
-            content="Iskra | UX Design & Web Development" />
+            content="Izrada web stranica i web dizajn po mjeri | Iskra" />
         <meta
             name="twitter:description"
-            content="Sharp, conversion-focused websites, UX/UI design, branding, landing pages, e-commerce, SEO, performance optimization, and ongoing support." />
+            content="Web stranice prilagođene vašem poslovanju: dizajn po mjeri, responzivna izrada i jasan put od posjeta do upita. Pogledajte Iskrine projekte." />
         <meta
             name="twitter:image"
             content="https://byiskra.com/assets/images/IskraFullLogo.png" />
 
+        <meta
+            property="og:locale"
+            content="hr_HR" />
+        <meta
+            property="og:locale:alternate"
+            content="en_GB" />
+        <meta
+            property="og:image:alt"
+            content="Logotip Iskre" />
+        <meta
+            name="twitter:image:alt"
+            content="Logotip Iskre" />
+
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                "name": "Iskra",
-                "url": "https://byiskra.com/en/",
-                "logo": "https://byiskra.com/assets/images/IskraLogo.png",
-                "image": "https://byiskra.com/assets/images/IskraFullLogo.png",
-                "description": "Iskra is a UX-focused web design and development agency founded in Zagreb, Croatia. The agency builds sharp, conversion-focused websites, landing pages, e-commerce experiences, and digital products.",
-                "email": "hello@byiskra.com",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Zagreb",
-                    "addressCountry": "HR"
-                },
-                "areaServed": ["Croatia", "Europe", "International"],
-                "knowsAbout": [
-                    "UX design",
-                    "Web development",
-                    "Web design",
-                    "Branding",
-                    "Landing pages",
-                    "E-commerce",
-                    "SEO optimization",
-                    "Performance optimization",
-                    "Website maintenance",
-                    "Generative AI"
-                ],
-                "sameAs": []
+                "@graph": [
+                    {
+                        "@type": "Brand",
+                        "@id": "https://byiskra.com/#brand",
+                        "name": "Iskra",
+                        "url": "https://byiskra.com/",
+                        "logo": "https://byiskra.com/assets/images/IskraLogo.png"
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://byiskra.com/#website",
+                        "url": "https://byiskra.com/",
+                        "name": "Iskra",
+                        "inLanguage": [
+                            "en",
+                            "hr"
+                        ],
+                        "about": {
+                            "@id": "https://byiskra.com/#brand"
+                        }
+                    },
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://byiskra.com/hr/#webpage",
+                        "url": "https://byiskra.com/hr/",
+                        "name": "Izrada web stranica i web dizajn po mjeri | Iskra",
+                        "description": "Izrada web stranica i web dizajn po mjeri. Iskra izrađuje brze, responzivne web stranice i web trgovine za vaše poslovanje. Zatražite ponudu.",
+                        "inLanguage": "hr",
+                        "isPartOf": {
+                            "@id": "https://byiskra.com/#website"
+                        },
+                        "about": {
+                            "@id": "https://byiskra.com/#brand"
+                        },
+                        "mainEntity": {
+                            "@id": "https://byiskra.com/#web-design-service"
+                        }
+                    },
+                    {
+                        "@type": "Service",
+                        "@id": "https://byiskra.com/#web-design-service",
+                        "name": "Izrada web stranica i web dizajn po mjeri",
+                        "description": "Izrada i dizajn web stranica pod brendom Iskra, uključujući responzivne web stranice, redizajn, odredišne stranice i web trgovine.",
+                        "serviceType": [
+                            "Web dizajn",
+                            "Izrada web stranica",
+                            "Redizajn web stranica",
+                            "Izrada odredišnih stranica",
+                            "Izrada web trgovina"
+                        ],
+                        "brand": {
+                            "@id": "https://byiskra.com/#brand"
+                        },
+                        "image": "https://byiskra.com/assets/images/IskraFullLogo.png"
+                    }
+                ]
             }
         </script>
 
@@ -124,19 +174,19 @@
                 consentTypes: [
                     {
                         id: "essential",
-                        label: "Essential",
+                        label: "Nužno",
                         description:
-                            "<p>This category is intended only for storage strictly necessary to remember your requested privacy preferences.</p>",
+                            "<p>Ova kategorija obuhvaća samo pohranu koja je strogo nužna za pamćenje postavki privatnosti koje ste zatražili.</p>",
                         required: true,
                         onAccept: function () {
-                            console.log("Add logic for the required Essential consent type here");
+                            console.log("Ovdje dodajte logiku za obveznu kategoriju nužne pohrane");
                         },
                     },
                     {
                         id: "analytics",
-                        label: "Analytics",
+                        label: "Analitika",
                         description:
-                            "<p>No analytics tracker is connected to this option. Choosing it does not authorise future tracking without further information and a new consent request.</p>",
+                            "<p>S ovom mogućnošću nije povezan nijedan alat za analitičko praćenje. Njezin odabir ne dopušta buduće praćenje bez dodatnih informacija i novog zahtjeva za privolu.</p>",
                         required: false,
                         gtag: "analytics_storage",
                     },
@@ -144,22 +194,22 @@
                 text: {
                     prompt: {
                         description:
-                            "<p>This website does not use analytics or advertising trackers. See our <a href='/en/privacy-policy/'>Privacy Policy</a> for information about external file delivery and preference storage.</p>",
-                        acceptAllButtonText: "Accept all",
-                        acceptAllButtonAccessibleLabel: "Accept all cookies",
-                        rejectNonEssentialButtonText: "Reject non-essential",
-                        rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
-                        preferencesButtonText: "Preferences",
-                        preferencesButtonAccessibleLabel: "Toggle preferences",
+                            "<p>Ova web stranica ne koristi analitičke alate ni alate za oglašivačko praćenje. Informacije o isporuci vanjskih datoteka i pohrani postavki potražite u dokumentu <a href='/hr/privacy-policy/'>Pravila privatnosti</a>.</p>",
+                        acceptAllButtonText: "Prihvati sve",
+                        acceptAllButtonAccessibleLabel: "Prihvati sve kolačiće",
+                        rejectNonEssentialButtonText: "Odbij nenužno",
+                        rejectNonEssentialButtonAccessibleLabel: "Odbij sve nenužne kolačiće",
+                        preferencesButtonText: "Postavke",
+                        preferencesButtonAccessibleLabel: "Otvori ili zatvori postavke",
                     },
                     preferences: {
-                        title: "Customize your cookie preferences",
+                        title: "Prilagodite postavke kolačića",
                         description:
-                            "<p>No optional tracking tool is currently used. The Analytics option is inactive. These settings do not control email processing or requests needed to load external files.</p>",
-                        saveButtonText: "Save and close",
-                        saveButtonAccessibleLabel: "Save your cookie preferences",
-                        creditLinkText: "Get this banner for free",
-                        creditLinkAccessibleLabel: "Get this banner for free",
+                            "<p>Trenutačno se ne koristi nijedan neobvezni alat za praćenje. Opcija Analitika nije aktivna. Ove postavke ne upravljaju obradom e-pošte ni zahtjevima za učitavanje vanjskih datoteka.</p>",
+                        saveButtonText: "Spremi i zatvori",
+                        saveButtonAccessibleLabel: "Spremi postavke kolačića",
+                        creditLinkText: "Preuzmite ovu obavijest besplatno",
+                        creditLinkAccessibleLabel: "Preuzmite ovu obavijest besplatno",
                     },
                 },
             });
@@ -179,11 +229,11 @@
                         class="flex justify-center items-center h-1/2 min-[540px]:h-2/3 min-[1280px]:h-full">
                         <img
                             src="/assets/images/IskraLogo.png"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-full mr-2 min-[540px]:mr-3 min-[1280px]:mr-4" />
                         <img
                             src="/assets/images/iskra-text-logo.svg"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-2/5 mt-3 min-[540px]:mt-4 min-[1280px]:mt-5 hidden min-[391px]:block" />
                     </a>
                 </div>
@@ -191,15 +241,15 @@
                     data-animate="navbar"
                     class="navbar-end hidden lg:flex w-fit">
                     <ul class="flex justify-center items-center px-1">
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projekti</a></li>
+                        <li><a href="#services">Usluge</a></li>
+                        <li><a href="#about">O nama</a></li>
                     </ul>
                     <div>
                         <a
-                            href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                            href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                             class="btn"
-                            >Contact</a
+                            >Kontakt</a
                         >
                     </div>
                 </div>
@@ -228,14 +278,14 @@
             <ul
                 tabindex="-1"
                 class="flex flex-col justify-start items-center gap-8 sm:gap-10 text-base sm:text-2xl">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projekti</a></li>
+                <li><a href="#services">Usluge</a></li>
+                <li><a href="#about">O nama</a></li>
                 <li>
                     <a
-                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                         class="btn"
-                        >Contact</a
+                        >Kontakt</a
                     >
                 </li>
             </ul>
@@ -253,7 +303,7 @@
                             class="w-full lg:w-2/3 flex justify-start items-center">
                             <h1
                                 class="w-full font-medium text-2xl min-[334px]:text-3xl min-[391px]:text-4xl min-[540px]:text-5xl min-[1036px]:text-6xl xl:text-[78px] 2xl:text-[86px]">
-                                Iskra is a UX-focused web development agency
+                                Izrada web stranica i web dizajn po mjeri
                             </h1>
                         </div>
                         <div
@@ -262,7 +312,7 @@
                             <div class="flex w-full justify-center tilt-card">
                                 <img
                                     src="/assets/images/hero-image.png"
-                                    alt="Website showcase"
+                                    alt="Prikaz dizajna web stranice"
                                     class="w-1/2 lg:w-full" />
                             </div>
                         </div>
@@ -287,102 +337,97 @@
                                     class="collapse collapse-arrow border join-item"
                                     name="faq">
                                     <summary class="collapse-title font-medium text-4xl">
-                                        Branding
+                                        Vizualni identitet
                                     </summary>
                                     <div
                                         class="collapse-content p-3 pt-5 pb-5 text-(--text-secondary) text-2xl font-light">
-                                        A brand is more than a logo, a color palette, or a
-                                        nice-looking website. It is the feeling people get when they
-                                        discover you, the trust they build when they understand you,
-                                        and the consistency they notice across every touchpoint. We
-                                        create visual identities and brand assets that make your
-                                        business easier to recognize, easier to remember, and easier
-                                        to choose.
+                                        Brend je više od logotipa, palete boja ili lijepo oblikovane
+                                        web stranice. Čine ga dojam koji ostavljate, povjerenje koje
+                                        gradite i dosljednost u svakom susretu s korisnicima.
+                                        Oblikujemo vizualni identitet i materijale koji pomažu da
+                                        vaše poslovanje bude prepoznatljivo, pamtljivo i lakši izbor
+                                        za buduće klijente.
                                     </div>
                                 </details>
                                 <details
                                     class="collapse collapse-arrow border join-item"
                                     name="faq">
                                     <summary class="collapse-title font-medium text-4xl">
-                                        Digital Products
+                                        Digitalni proizvodi
                                     </summary>
                                     <div
                                         class="collapse-content p-3 pt-5 pb-5 text-(--text-secondary) text-2xl font-light">
-                                        Great digital products feel simple, even when the thinking
-                                        behind them is complex. We design interfaces, flows, and
-                                        product experiences that help users understand what to do
-                                        next without friction. From first idea to polished
-                                        prototype, we focus on clarity, usability, and the small
-                                        details that make a product feel natural, useful, and built
-                                        around real people.
+                                        Dobar digitalni proizvod jednostavan je za korištenje, čak i
+                                        kada iza njega stoji složena ideja. Dizajniramo korisnička
+                                        sučelja i putanje koje korisnicima jasno pokazuju sljedeći
+                                        korak. Od početne zamisli do razrađenog prototipa
+                                        usredotočeni smo na preglednost, upotrebljivost i detalje
+                                        koji proizvod prilagođavaju stvarnim potrebama ljudi.
                                     </div>
                                 </details>
                                 <details
                                     class="collapse collapse-arrow border join-item"
                                     name="faq">
                                     <summary class="collapse-title font-medium text-4xl">
-                                        Websites
+                                        Web stranice
                                     </summary>
                                     <div
                                         class="collapse-content p-3 pt-5 pb-5 text-(--text-secondary) text-2xl font-light">
-                                        Your website is often the first real impression people have
-                                        of your brand. It should explain who you are, show what you
-                                        do, and guide visitors toward action without making them
-                                        work for it. We design websites that combine strong visuals,
-                                        clear structure, smooth user experience, and responsive
-                                        layouts so your online presence feels credible, modern, and
-                                        easy to use.
+                                        Web stranica često je prvi susret s vašim brendom. Treba
+                                        jasno predstaviti tko ste, što nudite i kako vas
+                                        kontaktirati. Naš web dizajn spaja prepoznatljiv izgled,
+                                        pregledan sadržaj i dobro korisničko iskustvo. Responzivne
+                                        web stranice prilagođavamo mobitelima, tabletima i
+                                        računalima kako bi vaše poslovanje bilo uvjerljivo
+                                        predstavljeno na svakom zaslonu.
                                     </div>
                                 </details>
                                 <details
                                     class="collapse collapse-arrow border join-item"
                                     name="faq">
                                     <summary class="collapse-title font-medium text-4xl">
-                                        Development
+                                        Web razvoj
                                     </summary>
                                     <div
                                         class="collapse-content p-3 pt-5 pb-5 text-(--text-secondary) text-2xl font-light">
-                                        Good development is what turns a strong design into a fast,
-                                        reliable experience. We build websites and digital products
-                                        that look polished, work smoothly, and perform well across
-                                        devices. From responsive frontend interactions to clean
-                                        technical structure, we focus on code that supports the
-                                        design, protects performance, and keeps the experience
-                                        stable as your business grows.
+                                        Kvalitetan web razvoj pretvara dizajn u brzu i pouzdanu
+                                        stranicu. Izrađujemo web stranice i digitalne proizvode koji
+                                        rade glatko na različitim uređajima. Od interakcija u
+                                        korisničkom sučelju do tehničke izvedbe, pišemo kod koji
+                                        podržava dizajn, brzinu učitavanja i stabilan rad dok vaše
+                                        poslovanje raste.
                                     </div>
                                 </details>
                                 <details
                                     class="collapse collapse-arrow border join-item"
                                     name="faq">
                                     <summary class="collapse-title font-medium text-4xl">
-                                        Content
+                                        Sadržaj
                                     </summary>
                                     <div
                                         class="collapse-content p-3 pt-5 pb-5 text-(--text-secondary) text-2xl font-light">
-                                        Content shapes how people understand your brand. The right
-                                        words, visuals, icons, graphics, and motion can make your
-                                        message clearer and your website more memorable. We create
-                                        content that supports the design instead of filling space,
-                                        from website copy and visual assets to illustrations,
-                                        animations, and brand elements that help every section feel
-                                        intentional.
+                                        Sadržaj pomaže posjetiteljima razumjeti vaš brend. Prave
+                                        riječi, fotografije, ikone i animacije jasno prenose poruku
+                                        i čine web stranicu pamtljivom. Pripremamo tekstove i
+                                        vizualne materijale koji imaju jasnu svrhu: od sadržaja za
+                                        web i ilustracija do animacija i elemenata vizualnog
+                                        identiteta.
                                     </div>
                                 </details>
                                 <details
                                     class="collapse collapse-arrow border join-item"
                                     name="faq">
                                     <summary class="collapse-title font-medium text-4xl">
-                                        Generative AI
+                                        Generativni AI
                                     </summary>
                                     <div
                                         class="collapse-content p-3 pt-5 pb-5 text-(--text-secondary) text-2xl font-light">
-                                        AI is most powerful when it solves real problems, speeds up
-                                        smart decisions, and improves the user experience. We use
-                                        generative AI to explore ideas faster, prototype better
-                                        interactions, create smarter workflows, and build digital
-                                        features that feel genuinely useful. The goal is not to add
-                                        AI for attention, but to use it where it creates real value
-                                        for your brand and your users.
+                                        Umjetna inteligencija korisna je kada rješava konkretan
+                                        problem i olakšava rad. Generativni AI koristimo za brže
+                                        istraživanje ideja, izradu prototipova, unaprjeđenje radnih
+                                        procesa i razvoj korisnih digitalnih funkcionalnosti.
+                                        Primjenjujemo ga ondje gdje donosi stvarnu vrijednost vašem
+                                        brendu i korisnicima.
                                     </div>
                                 </details>
                             </div>
@@ -392,8 +437,8 @@
                             class="max-[452px]:w-full max-[850px]:w-2/3 max-[1212px]:w-[60%] w-1/2 max-[850px]:order-1">
                             <h2
                                 class="text-left text-xl min-[543px]:text-2xl min-[706px]:text-3xl min-[850px]:text-4xl leading-6 min-[543px]:leading-8 min-[706px]:leading-11">
-                                We design and develop websites that help brands look sharper, move
-                                faster, and grow online.
+                                Dizajniramo i izrađujemo web stranice koje jasno predstavljaju vaš
+                                brend, brzo se učitavaju i podržavaju rast poslovanja.
                             </h2>
                         </div>
                     </div>
@@ -411,16 +456,16 @@
                             <img
                                 class="client-logo"
                                 src="/assets/images/etcGrayscaled.png"
-                                alt="Et Cetera logo" /><img
+                                alt="Logotip Et cetera" /><img
                                 class="client-logo"
                                 src="/assets/images/atcGrayscaled.png"
-                                alt="ATC logo" /><img
+                                alt="Logotip konferencije ATC" /><img
                                 class="client-logo"
                                 src="/assets/images/laurusGrayscaled.png"
-                                alt="Laurus Nobilis logo" /><img
+                                alt="Logotip apartmana Laurus Nobilis" /><img
                                 class="client-logo"
                                 src="/assets/images/tregerGrayscaled.png"
-                                alt="Treger Team logo" />
+                                alt="Logotip Treger Teama" />
                         </div>
                     </div>
                 </div>
@@ -447,7 +492,7 @@
                                             alt="" />
                                         <div
                                             class="absolute inset-0 flex items-center justify-center bg-black/65 text-white font-medium">
-                                            Still in progress
+                                            U izradi
                                         </div>
                                     </div>
 
@@ -455,7 +500,7 @@
                                         class="flex flex-col justify-start items-start project-text">
                                         <p class="project-name font-medium">Et cetera</p>
                                         <p class="project-desc font-light text-(--text-secondary)">
-                                            Translation agency in Zagreb, Croatia
+                                            Prevoditeljska agencija iz Zagreba
                                         </p>
                                     </div>
                                 </a>
@@ -472,10 +517,10 @@
                                     <div
                                         class="flex flex-col justify-start items-start project-text">
                                         <p class="project-name font-medium">
-                                            Laurus Nobilis Apartment
+                                            Apartman Laurus Nobilis
                                         </p>
                                         <p class="project-desc font-light text-(--text-secondary)">
-                                            Seaside apartment in Lovran, Croatia
+                                            Apartman uz more u Lovranu
                                         </p>
                                     </div>
                                 </a>
@@ -498,8 +543,8 @@
                                             Adriatic Translation Conference
                                         </p>
                                         <p class="project-desc font-light text-(--text-secondary)">
-                                            Conference for translators, interpreters and language
-                                            experts
+                                            Konferencija za prevoditelje, tumače i jezične
+                                            stručnjake
                                         </p>
                                     </div>
                                 </a>
@@ -517,7 +562,7 @@
                                         class="flex flex-col justify-start items-start project-text">
                                         <p class="project-name font-medium">Rino Bago</p>
                                         <p class="project-desc font-light text-(--text-secondary)">
-                                            Personal website for Rino Bago
+                                            Osobna web stranica Rina Bage
                                         </p>
                                     </div>
                                 </a>
@@ -536,7 +581,7 @@
                             <div class="flex flex-col justify-start items-start project-text">
                                 <p class="project-name font-medium">Treger Team</p>
                                 <p class="project-desc font-light text-(--text-secondary)">
-                                    Translation agency in Zagreb, Croatia
+                                    Prevoditeljska agencija iz Zagreba
                                 </p>
                             </div>
                         </a>
@@ -551,44 +596,46 @@
                 <div class="container">
                     <div
                         class="flex flex-col justify-center items-center gap-10 min-[500px]:gap-15 min-[600px]:gap-20">
-                        <h2 class="font-bold text-[clamp(36px,8.7vw,96px)]">Services</h2>
+                        <h2 class="font-bold text-[clamp(36px,8.7vw,96px)]">
+                            Usluge izrade web stranica
+                        </h2>
                         <div
                             data-animate="fade-up"
                             class="flex flex-col min-[600px]:flex-row justify-center items-center min-[600px]:gap-5 w-full">
                             <div class="flex flex-col items-start w-full justify-center">
                                 <p
                                     class="flex justify-start items-center py-6 min-[700px]:py-10 service-name border-b border-b-white w-full">
-                                    Custom websites
+                                    Web stranice po mjeri
                                 </p>
                                 <p
                                     class="flex justify-start items-center py-6 min-[700px]:py-10 service-name border-b border-b-white w-full">
-                                    Website redesigns
+                                    Redizajn web stranica
                                 </p>
                                 <p
                                     class="flex justify-start items-center py-6 min-[700px]:py-10 service-name border-b border-b-white w-full">
-                                    Landing pages
+                                    Odredišne stranice
                                 </p>
                                 <p
                                     class="flex justify-start items-center py-6 min-[700px]:py-10 service-name border-b border-b-white w-full min-[600px]:border-0">
-                                    E-commerce
+                                    Web trgovine
                                 </p>
                             </div>
                             <div class="flex flex-col items-start w-full justify-center">
                                 <p
                                     class="flex justify-start items-center py-6 min-[700px]:py-10 service-name border-b border-b-white w-full">
-                                    SEO optimization
+                                    SEO optimizacija
                                 </p>
                                 <p
                                     class="flex justify-start items-center py-6 min-[700px]:py-10 service-name border-b border-b-white w-full">
-                                    Performance optimization
+                                    Optimizacija brzine
                                 </p>
                                 <p
                                     class="flex justify-start items-center py-6 min-[700px]:py-10 service-name border-b border-b-white w-full">
-                                    Website maintenance
+                                    Održavanje web stranica
                                 </p>
                                 <p
                                     class="flex justify-start items-center py-6 min-[700px]:py-10 service-name w-full">
-                                    Ongoing support
+                                    Kontinuirana podrška
                                 </p>
                             </div>
                         </div>
@@ -603,18 +650,16 @@
                 <div class="container relative">
                     <div
                         class="relative z-10 flex flex-col justify-start items-start gap-10 min-[500px]:gap-15 min-[600px]:gap-20 w-full min-[490px]:w-4/5 min-[950px]:w-2/3">
-                        <h2 class="text-[clamp(36px,8.7vw,96px)] font-bold">About Us</h2>
+                        <h2 class="text-[clamp(36px,8.7vw,96px)] font-bold">O Iskri</h2>
                         <p
                             data-animate="fade-up"
                             class="w-full about-text leading-normal">
-                            We are Iskra, a web development and design agency founded in Zagreb,
-                            Croatia. We build sharp, conversion-focused websites for brands that
-                            need more than a nice first impression. From strategy and UX to design,
-                            development, and launch, we turn ideas into fast, polished digital
-                            experiences that help visitors understand your value, trust your
-                            business, and take action. Every page we create is shaped around
-                            clarity, performance, and the goals that matter most: more inquiries,
-                            stronger credibility, and better results online.
+                            Iskra je brend iz Zagreba posvećen web dizajnu i izradi web stranica.
+                            Stvaramo stranice koje jasno predstavljaju vašu ponudu i potiču
+                            posjetitelje na upit ili kupnju. Od strategije i korisničkog iskustva do
+                            dizajna, razvoja i objave, pretvaramo ideje u brza i pregledna digitalna
+                            rješenja. Svaku stranicu prilagođavamo vašim poslovnim ciljevima: većem
+                            broju upita, većem povjerenju i kvalitetnijem nastupu na internetu.
                         </p>
                     </div>
                     <div class="z-1 w-9/10 absolute top-0 left-0 flex justify-end items-start">
@@ -633,7 +678,7 @@
                 <div class="container">
                     <div
                         class="flex flex-col justify-center items-center gap-10 min-[500px]:gap-15 min-[600px]:gap-20">
-                        <h2 class="text-[clamp(36px,8.7vw,96px)] font-bold">FAQ</h2>
+                        <h2 class="text-[clamp(36px,8.7vw,96px)] font-bold">Česta pitanja</h2>
                         <div
                             data-animate="fade-up"
                             class="w-full join join-vertical accordion">
@@ -641,88 +686,84 @@
                                 class="collapse collapse-arrow border border-(--border-primary) join-item"
                                 name="faq">
                                 <summary class="collapse-title font-medium p-10 faq-question">
-                                    What services does Iskra offer?
+                                    Koje usluge nudi Iskra?
                                 </summary>
                                 <div class="collapse-content faq-answer text-lg">
-                                    We are Iskra, a web design and development agency founded in
-                                    Zagreb, Croatia. We help businesses turn their websites into
-                                    stronger sales and trust-building tools through strategy, UX/UI
-                                    design, branding, responsive development, and conversion-focused
-                                    landing pages. Our work covers everything from first concept to
-                                    launch, with every decision shaped around clarity, speed,
-                                    credibility, and results.
+                                    Iskra nudi izradu web stranica, web dizajn, UX/UI dizajn,
+                                    oblikovanje vizualnog identiteta i izradu odredišnih stranica.
+                                    Pomažemo poduzećima jasno predstaviti ponudu i izgraditi
+                                    povjerenje posjetitelja. Projekt pratimo od početne ideje do
+                                    objave, uz naglasak na preglednost, brzinu i jednostavno
+                                    korištenje.
                                 </div>
                             </details>
                             <details
                                 class="collapse collapse-arrow border border-(--border-primary) join-item"
                                 name="faq">
                                 <summary class="collapse-title font-medium p-10 faq-question">
-                                    What makes Iskra different from other web design agencies?
+                                    Po čemu se Iskra razlikuje u izradi web stranica?
                                 </summary>
                                 <div class="collapse-content faq-answer text-lg">
-                                    We do not design websites just to look good. We build them to
-                                    help visitors understand your offer, trust your brand, and take
-                                    action. Our process combines clean design, strong messaging,
-                                    fast development, and practical conversion thinking, so your
-                                    website works as a business asset instead of just an online
-                                    brochure.
+                                    Uz izgled stranice, važni su nam jasna ponuda i jednostavan put
+                                    do upita ili kupnje. Povezujemo pregledan dizajn, razumljive
+                                    poruke i brzu tehničku izvedbu kako bi web stranica aktivno
+                                    podržavala vaše poslovne ciljeve.
                                 </div>
                             </details>
                             <details
                                 class="collapse collapse-arrow border border-(--border-primary) join-item"
                                 name="faq">
                                 <summary class="collapse-title font-medium p-10 faq-question">
-                                    Do you work with clients outside Croatia?
+                                    Surađujete li s klijentima izvan Hrvatske?
                                 </summary>
                                 <div class="collapse-content faq-answer text-lg">
-                                    Yes. Although we are founded in Zagreb, Croatia, we work with
-                                    clients across different locations and time zones. Our process
-                                    is built around clear communication, structured milestones, and
-                                    focused feedback, so projects stay smooth whether you are local
-                                    or international.
+                                    Da. Iako je Iskra nastala u Zagrebu, surađujemo s klijentima na
+                                    različitim lokacijama i u različitim vremenskim zonama. Jasna
+                                    komunikacija, dogovorene faze rada i konkretne povratne
+                                    informacije omogućuju nam učinkovitu suradnju u Hrvatskoj i
+                                    inozemstvu.
                                 </div>
                             </details>
                             <details
                                 class="collapse collapse-arrow border border-(--border-primary) join-item"
                                 name="faq">
                                 <summary class="collapse-title font-medium p-10 faq-question">
-                                    How much does a website or design project cost?
+                                    Koliko košta izrada web stranice?
                                 </summary>
                                 <div class="collapse-content faq-answer text-lg">
-                                    Every project depends on the scope, goals, number of pages,
-                                    design complexity, and required functionality. After we
-                                    understand what you need, we prepare a clear proposal with the
-                                    recommended approach, timeline, and cost. That way, you know
-                                    exactly what is included before we start.
+                                    Cijena izrade web stranice ovisi o opsegu projekta, ciljevima,
+                                    broju stranica, složenosti dizajna i potrebnim
+                                    funkcionalnostima. Nakon razgovora o vašim potrebama pripremamo
+                                    ponudu s preporučenim pristupom, rokovima i cijenom. Prije
+                                    početka rada jasno znate što je uključeno.
                                 </div>
                             </details>
                             <details
                                 class="collapse collapse-arrow border border-(--border-primary) join-item"
                                 name="faq">
                                 <summary class="collapse-title font-medium p-10 faq-question">
-                                    Do you work with startups and small businesses?
+                                    Radite li s malim poduzećima i startupima?
                                 </summary>
                                 <div class="collapse-content faq-answer text-lg">
-                                    Yes. We work with startups, growing businesses, and established
-                                    brands that need a sharper digital presence. If you are
-                                    launching something new, improving an existing site, or
-                                    preparing your brand for a bigger market, we can help you create
-                                    a website that looks professional and makes your offer easier to
-                                    buy into.
+                                    Da. Surađujemo sa startupima, malim poduzećima i brendovima koji
+                                    žele unaprijediti svoju prisutnost na internetu. Bilo da
+                                    pokrećete novi posao, uređujete postojeću stranicu ili ulazite
+                                    na novo tržište, možemo vam pomoći izraditi profesionalnu web
+                                    stranicu koja jasno predstavlja vašu ponudu.
                                 </div>
                             </details>
                             <details
                                 class="collapse collapse-arrow border border-(--border-primary) join-item"
                                 name="faq">
                                 <summary class="collapse-title font-medium p-10 faq-question">
-                                    Can you redesign our existing website?
+                                    Možete li redizajnirati postojeću web stranicu?
                                 </summary>
                                 <div class="collapse-content faq-answer text-lg">
-                                    Yes. If your current website feels outdated, unclear, slow, or
-                                    does not convert well, we can redesign it from the ground up. We
-                                    look at your structure, messaging, visuals, user experience, and
-                                    performance, then create a cleaner, stronger version built to
-                                    generate more trust, inquiries, and business opportunities.
+                                    Da. Ako je vaša web stranica zastarjela, nepregledna, spora ili
+                                    ne donosi željene upite, možemo je redizajnirati. Analiziramo
+                                    sadržaj, strukturu, izgled, korisničko iskustvo i brzinu te
+                                    pripremamo rješenje usmjereno na jasniju ponudu i lakši kontakt
+                                    s potencijalnim klijentima.
                                 </div>
                             </details>
                         </div>
@@ -743,17 +784,17 @@
                                 class="flex flex-col justify-center items-center w-full gap-2 min-[390px]:gap-5 min-[1200px]:gap-8">
                                 <h2
                                     class="text-(--color-primary) font-bold min-[770px]:max-w-[70%] w-full">
-                                    Ready to discuss your project with us?
+                                    Razgovarajmo o vašoj web stranici
                                 </h2>
                                 <p class="text-2xl font-semibold min-[930px]:max-w-[70%] w-full">
-                                    Let's create a sharp, conversion-focused experience that helps
-                                    more visitors become clients.
+                                    Izradimo preglednu i brzu web stranicu koja posjetiteljima
+                                    olakšava da postanu vaši klijenti.
                                 </p>
                             </div>
                             <a
-                                href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                                href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                                 class="btn text-xl font-medium"
-                                >BOOK A CALL</a
+                                >POŠALJITE UPIT</a
                             >
                         </div>
                     </div>
@@ -768,32 +809,32 @@
                         class="flex items-end gap-0">
                         <img
                             src="/assets/images/IskraLogo.png"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-25 mr-4" />
                         <img
                             src="/assets/images/iskra-text-logo.svg"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-10 mb-5" />
                     </a>
                     <p class="text-(--text-muted) font-light mt-3 text-base min-[640px]:text-lg">
-                        © 2026 Iskra. All rights reserved.
+                        © 2026 Iskra. Sva prava zadržana.
                     </p>
                 </aside>
                 <nav class="flex flex-col gap-2 min-[640px]:gap-4">
-                    <h6 class="text-(--text-muted) uppercase">Pages</h6>
-                    <a href="#projects">Projects</a>
-                    <a href="#services">Services</a>
-                    <a href="#about">About</a>
+                    <h6 class="text-(--text-muted) uppercase">Stranice</h6>
+                    <a href="#projects">Projekti</a>
+                    <a href="#services">Usluge</a>
+                    <a href="#about">O nama</a>
                     <a
-                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                         class="btn"
-                        >Contact</a
+                        >Kontakt</a
                     >
                 </nav>
                 <nav class="flex flex-col gap-2 min-[640px]:gap-4">
-                    <h6 class="text-(--text-muted) uppercase">Legal</h6>
-                    <a href="/en/terms-of-use/">Terms of Use</a>
-                    <a href="/en/privacy-policy/">Privacy Policy</a>
+                    <h6 class="text-(--text-muted) uppercase">Pravne informacije</h6>
+                    <a href="/hr/terms-of-use/">Uvjeti korištenja</a>
+                    <a href="/hr/privacy-policy/">Pravila privatnosti</a>
                 </nav>
             </div>
         </footer>

@@ -1,32 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="hr">
     <head>
         <meta charset="UTF-8" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
-        <title>Privacy Policy | Iskra</title>
+        <title>Pravila privatnosti | Iskra</title>
         <meta
             name="description"
-            content="Read the privacy policy for Iskra and learn how we handle website data, cookies, analytics, and contact information." />
+            content="Saznajte kako Iskra obrađuje osobne podatke, e-poštu i postavke privatnosti te koja su vaša prava prema GDPR-u i kako ih ostvariti." />
         <link
             rel="canonical"
-            href="https://byiskra.com/en/privacy-policy/" />
+            href="https://byiskra.com/hr/privacy-policy/" />
         <meta
             property="og:type"
             content="website" />
         <meta
             property="og:title"
-            content="Privacy Policy | Iskra" />
+            content="Pravila privatnosti | Iskra" />
         <meta
             property="og:description"
-            content="Learn how Iskra handles website data, cookies, analytics, and contact information." />
+            content="Informacije o obradi osobnih podataka, pružateljima usluga, čuvanju podataka i vašim pravima na web stranici Iskra." />
         <meta
             property="og:image"
             content="https://byiskra.com/assets/images/IskraFullLogo.png" />
         <meta
             property="og:url"
-            content="https://byiskra.com/en/privacy-policy/" />
+            content="https://byiskra.com/hr/privacy-policy/" />
         <meta
             property="og:site_name"
             content="Iskra" />
@@ -76,19 +76,19 @@
                 consentTypes: [
                     {
                         id: "essential",
-                        label: "Essential",
+                        label: "Nužno",
                         description:
-                            "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like setting your privacy preferences.</p>",
+                            "<p>Ova kategorija obuhvaća samo pohranu koja je strogo nužna za pamćenje postavki privatnosti koje ste zatražili.</p>",
                         required: true,
                         onAccept: function () {
-                            console.log("Add logic for the required Essential consent type here");
+                            console.log("Ovdje dodajte logiku za obveznu kategoriju nužne pohrane");
                         },
                     },
                     {
                         id: "analytics",
-                        label: "Analytics",
+                        label: "Analitika",
                         description:
-                            "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+                            "<p>S ovom mogućnošću nije povezan nijedan alat za analitičko praćenje. Njezin odabir ne dopušta buduće praćenje bez dodatnih informacija i novog zahtjeva za privolu.</p>",
                         required: false,
                         gtag: "analytics_storage",
                     },
@@ -96,22 +96,22 @@
                 text: {
                     prompt: {
                         description:
-                            "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
-                        acceptAllButtonText: "Accept all",
-                        acceptAllButtonAccessibleLabel: "Accept all cookies",
-                        rejectNonEssentialButtonText: "Reject non-essential",
-                        rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
-                        preferencesButtonText: "Preferences",
-                        preferencesButtonAccessibleLabel: "Toggle preferences",
+                            "<p>Ova web stranica ne koristi analitičke alate ni alate za oglašivačko praćenje. Informacije o isporuci vanjskih datoteka i pohrani postavki potražite u dokumentu <a href='/hr/privacy-policy/'>Pravila privatnosti</a>.</p>",
+                        acceptAllButtonText: "Prihvati sve",
+                        acceptAllButtonAccessibleLabel: "Prihvati sve kolačiće",
+                        rejectNonEssentialButtonText: "Odbij nenužno",
+                        rejectNonEssentialButtonAccessibleLabel: "Odbij sve nenužne kolačiće",
+                        preferencesButtonText: "Postavke",
+                        preferencesButtonAccessibleLabel: "Otvori ili zatvori postavke",
                     },
                     preferences: {
-                        title: "Customize your cookie preferences",
+                        title: "Prilagodite postavke kolačića",
                         description:
-                            "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
-                        saveButtonText: "Save and close",
-                        saveButtonAccessibleLabel: "Save your cookie preferences",
-                        creditLinkText: "Get this banner for free",
-                        creditLinkAccessibleLabel: "Get this banner for free",
+                            "<p>Trenutačno se ne koristi nijedan neobvezni alat za praćenje. Opcija Analitika nije aktivna. Ove postavke ne upravljaju obradom e-pošte ni zahtjevima za učitavanje vanjskih datoteka.</p>",
+                        saveButtonText: "Spremi i zatvori",
+                        saveButtonAccessibleLabel: "Spremi postavke kolačića",
+                        creditLinkText: "Preuzmite ovu obavijest besplatno",
+                        creditLinkAccessibleLabel: "Preuzmite ovu obavijest besplatno",
                     },
                 },
             });
@@ -125,15 +125,15 @@
             <div class="navbar container h-full justify-between">
                 <div class="navbar-start w-auto h-full">
                     <a
-                        href="/en/#top"
+                        href="/hr/"
                         class="flex justify-center items-center h-1/2 min-[540px]:h-2/3 min-[1280px]:h-full">
                         <img
                             src="/assets/images/IskraLogo.png"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-full mr-2 min-[540px]:mr-3 min-[1280px]:mr-4" />
                         <img
                             src="/assets/images/iskra-text-logo.svg"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-2/5 mt-3 min-[540px]:mt-4 min-[1280px]:mt-5 hidden min-[391px]:block" />
                     </a>
                 </div>
@@ -141,15 +141,15 @@
                     data-animate="navbar"
                     class="navbar-end hidden lg:flex w-fit">
                     <ul class="flex justify-center items-center px-1">
-                        <li><a href="/en/#projects">Projects</a></li>
-                        <li><a href="/en/#services">Services</a></li>
-                        <li><a href="/en/#about">About</a></li>
+                        <li><a href="/hr/#projects">Projekti</a></li>
+                        <li><a href="/hr/#services">Usluge</a></li>
+                        <li><a href="/hr/#about">O nama</a></li>
                     </ul>
                     <div>
                         <a
-                            href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                            href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                             class="btn"
-                            >Contact</a
+                            >Kontakt</a
                         >
                     </div>
                 </div>
@@ -178,14 +178,14 @@
             <ul
                 tabindex="-1"
                 class="flex flex-col justify-start items-center gap-8 sm:gap-10 text-base sm:text-2xl">
-                <li><a href="/en/#projects">Projects</a></li>
-                <li><a href="/en/#services">Services</a></li>
-                <li><a href="/en/#about">About</a></li>
+                <li><a href="/hr/#projects">Projekti</a></li>
+                <li><a href="/hr/#services">Usluge</a></li>
+                <li><a href="/hr/#about">O nama</a></li>
                 <li>
                     <a
-                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                         class="btn"
-                        >Contact</a
+                        >Kontakt</a
                     >
                 </li>
             </ul>
@@ -194,131 +194,316 @@
         <main id="privacy-policy">
             <section class="section">
                 <div class="container">
-                    <h1>Privacy Policy</h1>
-                    <p>Last updated: July 18, 2026</p>
-
+                    <h1>Pravila privatnosti</h1>
+                    <p>Posljednje ažuriranje: 23. listopada 2026.</p>
                     <p>
-                        This Privacy Policy explains how Iskra collects, uses, and protects
-                        information when you visit this website or contact us about our services. By
-                        using this website, you agree to the practices described in this policy.
+                        Ova pravila objašnjavaju kako postupamo s osobnim podacima kada posjetite
+                        byiskra.com ili kontaktirate Iskru. Služe informiranju o obradi podataka i
+                        nisu zahtjev za davanje privole.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Information We Collect</h2>
+                    <h2>Tko je odgovoran za vaše podatke</h2>
                     <p>
-                        We may collect information you choose to provide when you contact us, such
-                        as your name, email address, company name, website, project details, and any
-                        other information included in your message.
+                        Iskra je brend kojim upravlja Rino Bago, koji je odgovoran za osobne podatke
+                        opisane u ovim pravilima.
                     </p>
                     <p>
-                        We may also collect limited technical information, such as browser type,
-                        device type, pages visited, and general usage data, especially if analytics
-                        cookies are accepted.
+                        Za pitanja ili zahtjeve povezane s privatnošću pišite na adresu
+                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>How We Use Your Information</h2>
+                    <h2>Kontakt i podaci koje nam dostavljate</h2>
                     <p>
-                        We use your information to respond to inquiries, discuss potential projects,
-                        provide services, improve our website, understand visitor behavior, and
-                        maintain the security and functionality of the website.
+                        Na web stranici nalaze se poveznice za kontakt e-poštom, a ne internetski
+                        obrazac za kontakt. Odabirom poveznice otvara se vaša aplikacija za e-poštu
+                        s našom adresom i predloženim predmetom poruke. Poruka se ne šalje
+                        automatski. Ako pošaljete e-poruku, ona se prima i pohranjuje u Gmailu,
+                        Googleovoj usluzi e-pošte.
+                    </p>
+                    <p>
+                        Primamo vašu adresu e-pošte, ime pošiljatelja ako je navedeno, predmet i
+                        sadržaj poruke, privitke koje odlučite poslati te podatke o isporuci
+                        e-pošte. Poruka može sadržavati naziv vašeg poduzeća, adresu web stranice i
+                        zahtjeve projekta. Te podatke koristimo kako bismo pročitali vaš upit,
+                        odgovorili na njega i razgovarali o poslu koji tražite.
+                    </p>
+                    <p>
+                        Kontaktiranje je dobrovoljno i nije zakonski ni ugovorni uvjet za
+                        pregledavanje ove web stranice. Da bismo razumjeli upit i odgovorili na
+                        njega, potrebni su nam važeća adresa za odgovor i dovoljno informacija o
+                        upitu. Bez toga možda nećemo moći odgovoriti ili procijeniti projekt. Ostali
+                        su podaci neobvezni, osim ako objasnimo zašto su potrebni za određeni
+                        sljedeći korak. Molimo ne šaljite osjetljive osobne podatke ni nepotrebne
+                        podatke o drugim osobama.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Cookies</h2>
+                    <h2>Svrhe i pravne osnove obrade</h2>
                     <p>
-                        This website may use essential cookies required for basic functionality and
-                        optional analytics cookies to help us understand how visitors use the site.
-                        Non-essential cookies are only used based on your consent.
+                        Za radnje koje na vaš zahtjev poduzimamo prije sklapanja ugovora s vama
+                        osobno, poput razgovora o projektu ili pripreme ponude, pravna je osnova
+                        članak 6. stavak 1. točka (b) GDPR-a. Ta se osnova primjenjuje i na obradu
+                        nužnu za izvršenje ugovora s vama, ako je ugovor sklopljen.
                     </p>
                     <p>
-                        You can update your cookie preferences at any time using the cookie settings
-                        control available on the website.
+                        Za opću korespondenciju i upite osoba koje djeluju u ime organizacije
+                        oslanjamo se na članak 6. stavak 1. točku (f) GDPR-a: naš legitimni interes
+                        za odgovaranje na relevantne poruke i održavanje profesionalnih odnosa. Ista
+                        se osnova primjenjuje na nužno posluživanje web stranice, razmjerne
+                        sigurnosne mjere i čuvanje podataka potrebnih za postavljanje, ostvarivanje
+                        ili obranu pravnih zahtjeva. Ti se interesi moraju odvagnuti u odnosu na
+                        vaša prava i ne opravdavaju nepotrebnu obradu.
                     </p>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="container">
-                    <h2>Analytics</h2>
                     <p>
-                        If analytics cookies are accepted, we may use analytics tools to collect
-                        aggregated information about website traffic and visitor behavior. This
-                        helps us improve the structure, content, and performance of the website.
+                        Podatke potrebne za rješavanje zahtjeva za ostvarivanje prava iz GDPR-a
+                        obrađujemo na temelju članka 6. stavka 1. točke (c), radi ispunjavanja
+                        obveza iz GDPR-a. Svaka dodatna zakonska obveza vođenja evidencije mora biti
+                        povezana s konkretnom djelatnošću i mjerodavnim pravom.
                     </p>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="container">
-                    <h2>Sharing Your Information</h2>
                     <p>
-                        We do not sell your personal information. We may share information only when
-                        necessary to operate the website, provide services, comply with legal
-                        obligations, or work with trusted service providers who help us run our
-                        business.
+                        Ne smatramo da ste dali privolu samo zato što posjećujete ovu web stranicu,
+                        čitate ova pravila ili šaljete upit e-poštom. Ako uvedemo neobveznu obradu
+                        za koju je potrebna privola, prije njezina početka moramo je objasniti i
+                        zatražiti zasebnu, informiranu odluku. Pravna osnova za takvu obradu bila bi
+                        članak 6. stavak 1. točka (a) GDPR-a.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Data Retention</h2>
+                    <h2>Hosting i pružatelji usluga</h2>
                     <p>
-                        We keep personal information only for as long as needed to respond to your
-                        inquiry, provide services, maintain business records, or comply with legal
-                        obligations.
+                        Ova je web stranica smještena na usluzi GitHub Pages. Radi posluživanja
+                        stranica hosting infrastruktura prima tehničke podatke o zahtjevu,
+                        uključujući vašu IP adresu i traženi resurs. GitHub navodi da iz sigurnosnih
+                        razloga bilježi IP adrese posjetitelja. Pogledajte
+                        <a
+                            href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                            >GitHubovu izjavu o privatnosti</a
+                        >
+                        za informacije o toj obradi.
+                    </p>
+                    <p>
+                        Web stranica također dohvaća skripte i stilove s domene cdn.jsdelivr.net,
+                        uključujući datoteke alata Silktide Consent Manager i biblioteke GSAP za
+                        animacije. Ti se zahtjevi šalju pri učitavanju stranice, prije odabira
+                        postavki. Usluga za isporuku datoteka prima vašu IP adresu i podatke o
+                        zahtjevu; zaglavlja preglednika mogu sadržavati podatke o pregledniku i
+                        izvornoj stranici. Riječ je o zahtjevima za isporuku vanjskih datoteka, što
+                        samo po sebi ne znači korištenje analitičke usluge. Pogledajte
+                        <a href="https://www.jsdelivr.com/terms/privacy-policy"
+                            >informacije o privatnosti usluge jsDelivr</a
+                        >.
+                    </p>
+                    <p>
+                        Google pruža uslugu e-pošte koju koristimo za primanje upita i odgovaranje
+                        na njih. Kroz tu uslugu prolaze sadržaj poruka, privitci i podaci o
+                        isporuci. Namecheap je registrar domene; sama registracija domene ne znači
+                        da se poruke s upitima šalju Namecheapu.
+                    </p>
+                    <p>
+                        Podaci se mogu otkriti i nadležnim tijelima kada to zahtijeva zakon ili
+                        stručnim savjetnicima kada je to potrebno za postavljanje, ostvarivanje ili
+                        obranu pravnog zahtjeva. Takvo otkrivanje mora biti ograničeno na ono što je
+                        nužno za tu svrhu.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Your Rights</h2>
+                    <h2>Kolačići, pohrana u pregledniku i analitika</h2>
                     <p>
-                        Depending on your location, you may have the right to request access,
-                        correction, deletion, or restriction of your personal information. You may
-                        also have the right to object to certain processing or withdraw consent for
-                        optional cookies.
+                        Na ovoj web stranici ne koristimo analitičke alate ni alate za oglašivačko
+                        praćenje. Postojeće postavke uključuju opciju „Analitika”, ali s njom nije
+                        povezan nijedan alat za analitičko praćenje. Odabirom te opcije ne dajete
+                        dopuštenje za neodređeno buduće praćenje.
+                    </p>
+                    <p>
+                        Web stranica konfigurirana je za učitavanje alata Silktide Consent Manager.
+                        Njegova je dokumentirana svrha ovdje pamćenje odabranih postavki u lokalnoj
+                        pohrani preglednika, umjesto u kolačićima za praćenje.
+                    </p>
+                    <p>
+                        Ako je pohrana strogo nužna za pamćenje postavke koju ste zatražili, može se
+                        primijeniti iznimka od obveze pribavljanja privole za pohranu na uređaju. To
+                        je odvojeno od pravne osnove za obradu osobnih podataka prema GDPR-u. Za
+                        druge nenužne kolačiće ili sličnu pohranu potrebni su prethodno informiranje
+                        i privola prema primjenjivim pravilima o elektroničkim komunikacijama.
+                    </p>
+                    <p>
+                        Ako uvedemo obradu na temelju privole, morate je moći odbiti i povući
+                        privolu jednako lako kao što ste je dali, bez utjecaja na zakonitost ranije
+                        obrade. Možete nam se obratiti na adresu
+                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a> u vezi s privolom
+                        koju ste nam dali. Podatke koje je ova stranica pohranila u pregledniku
+                        možete ukloniti i putem postavki preglednika, čime se mogu poništiti
+                        spremljene postavke. Brisanje podataka iz preglednika ne briše
+                        korespondenciju e-poštom ni zapise pružatelja usluga.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Third-Party Links</h2>
+                    <h2>Međunarodni prijenosi podataka</h2>
                     <p>
-                        This website may contain links to external websites. We are not responsible
-                        for the privacy practices, content, or security of third-party websites.
+                        GitHub u svojoj izjavi o privatnosti navodi da osobne podatke obrađuje u
+                        Sjedinjenim Američkim Državama i drugim zemljama te da za prijenose u zemlje
+                        bez odluke o primjerenosti u pravilu koristi standardne ugovorne klauzule
+                        Europske komisije. Opisuje i svoje sudjelovanje u Okviru EU-a i SAD-a za
+                        privatnost podataka. Pogledajte
+                        <a
+                            href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#international-data-transfers"
+                            >GitHubove informacije o prijenosima podataka</a
+                        >.
+                    </p>
+                    <p>
+                        GitHub, Google i infrastruktura za isporuku vanjskih datoteka djeluju
+                        međunarodno. Osobni podaci mogu se obrađivati izvan Europskoga gospodarskog
+                        prostora. Zemlje i uvjeti prijenosa ovise o konkretnoj usluzi i uvjetima
+                        korisničkog računa.
+                    </p>
+                    <p>
+                        Kada se na prijenos primjenjuju pravila GDPR-a o međunarodnim prijenosima,
+                        potreban je odgovarajući pravni mehanizam, poput odluke Europske komisije o
+                        primjerenosti ili odgovarajućih zaštitnih mjera iz članka 46., uz potrebne
+                        dodatne mjere. Korištenje ove web stranice ne možemo smatrati privolom za
+                        međunarodni prijenos. Obratite nam se na adresu
+                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a> kako biste
+                        zatražili informacije o prijenosima i presliku primjenjivih zaštitnih mjera.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Changes to This Policy</h2>
+                    <h2>Koliko dugo čuvamo podatke</h2>
                     <p>
-                        We may update this Privacy Policy from time to time. Any changes will be
-                        posted on this page with an updated date.
+                        Za upit koji ne dovede do projekta kriterij čuvanja podataka jest završetak
+                        korespondencije i daljnjih razgovora koje ste zatražili. Nakon toga
+                        korespondenciju treba izbrisati, osim ako su određeni podaci i dalje
+                        potrebni radi zakonske obveze ili postojećeg odnosno razumno očekivanog
+                        pravnog zahtjeva.
+                    </p>
+                    <p>
+                        Ako je projekt dogovoren, relevantna je korespondencija potrebna tijekom
+                        njegova trajanja. Svako daljnje čuvanje mora biti povezano s primjenjivim
+                        zakonskim rokom čuvanja evidencije ili odgovarajućim zastarnim rokom za
+                        pravne zahtjeve. U slučaju spora relevantne zapise može biti potrebno čuvati
+                        do njegova rješenja. Nepovezane podatke ne treba čuvati samo zato što se
+                        drugi zapisi moraju zadržati.
+                    </p>
+                    <p>
+                        Tehnički zapisi i sigurnosne kopije e-pošte ovise o postavkama i pravilima
+                        čuvanja pružatelja usluga. Pohrana postavki u pregledniku odvojena je od tih
+                        zapisa i može se ukloniti u pregledniku. Njezino uklanjanje ne obvezuje
+                        pružatelje usluga da izbrišu svoje zapise.
                     </p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2>Contact</h2>
+                    <h2>Vaša prava na zaštitu osobnih podataka</h2>
                     <p>
-                        If you have questions about this Privacy Policy, you can contact us at:
-                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>
+                        Možete zatražiti pristup svojim osobnim podacima i njihovu presliku,
+                        ispravak netočnih ili nepotpunih podataka, brisanje kada ga GDPR dopušta te
+                        ograničenje obrade u okolnostima propisanima GDPR-om. Pravo na brisanje može
+                        biti ograničeno kada su podaci potrebni radi zakonske obveze ili pravnih
+                        zahtjeva.
+                    </p>
+                    <p>
+                        Imate pravo, zbog razloga povezanih s vašom posebnom situacijom, uložiti
+                        prigovor na obradu koja se temelji na legitimnim interesima. Takva se obrada
+                        mora obustaviti, osim ako postoje uvjerljivi legitimni razlozi koji nadilaze
+                        vaše interese, prava i slobode ili je obrada potrebna za pravne zahtjeve.
+                        Ako se vaši podaci koriste za izravni marketing, možete u svakom trenutku
+                        uložiti prigovor i takav se marketing mora obustaviti.
+                    </p>
+                    <p>
+                        Kada se automatizirana obrada temelji na privoli ili ugovoru s vama, osobne
+                        podatke koje ste pružili možete dobiti u strukturiranom, uobičajeno
+                        upotrebljavanom i strojno čitljivom obliku te ih prenijeti drugom voditelju
+                        obrade. Možete zatražiti i izravan prijenos ako je tehnički izvediv. To
+                        pravo na prenosivost ne primjenjuje se na sve zapise ni na sve pravne osnove
+                        obrade.
+                    </p>
+                    <p>
+                        Ako se obrada temelji na privoli, možete je povući u bilo kojem trenutku.
+                        Povlačenje ne utječe na zakonitost obrade provedene na temelju privole prije
+                        njezina povlačenja.
+                    </p>
+                    <p>
+                        Za ostvarivanje svojih prava pišite na adresu
+                        <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>. Zahtjevi su u
+                        pravilu besplatni. Ako postoji opravdana sumnja u vaš identitet, možemo
+                        zatražiti razmjerne dodatne informacije. Moramo odgovoriti bez nepotrebnog
+                        odgađanja i u roku od mjesec dana od primitka zahtjeva. Zbog složenosti ili
+                        broja zahtjeva taj se rok može produljiti za najviše dodatna dva mjeseca, uz
+                        obrazloženje unutar prvog mjeseca. Ako odbijemo zahtjev, moramo objasniti
+                        razloge i obavijestiti vas o mogućnostima podnošenja pritužbe i sudske
+                        zaštite.
+                    </p>
+                    <p>
+                        Pritužbu možete podnijeti Agenciji za zaštitu osobnih podataka (AZOP):
+                        <a href="https://azop.hr/zahtjev-za-utvrdivanje-povrede-prava/"
+                            >postupak podnošenja zahtjeva AZOP-u</a
+                        >, <a href="mailto:azop@azop.hr">azop@azop.hr</a>, Ulica Metela Ožegovića
+                        16, 10000 Zagreb, Hrvatska. Pritužbu možete podnijeti i nadzornom tijelu u
+                        državi EU-a odnosno EGP-a u kojoj imate uobičajeno boravište ili radno
+                        mjesto, odnosno u kojoj je došlo do navodne povrede. Za ostvarivanje prava
+                        na pritužbu nije potrebno prethodno kontaktirati nas. Na raspolaganju su vam
+                        i sudska pravna sredstva.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Podaci drugih osoba i automatizirano odlučivanje</h2>
+                    <p>
+                        Ako netko u upitu navede kontaktne podatke druge osobe, koristimo samo
+                        podatke potrebne za obradu tog upita. Kada se primjenjuje članak 14. GDPR-a,
+                        ta osoba mora dobiti informacije o kategorijama podataka, izvoru, svrhama i
+                        ostalim obveznim pojedinostima najkasnije u roku od mjesec dana, odnosno pri
+                        prvoj komunikaciji ili prvom otkrivanju podataka ako nastupe ranije, osim
+                        ako se primjenjuje zakonska iznimka.
+                    </p>
+                    <p>
+                        Na ovoj web stranici ne donosimo odluke koje se temelje isključivo na
+                        automatiziranoj obradi, uključujući izradu profila, a koje proizvode pravne
+                        ili slične značajne učinke na posjetitelje.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2>Vanjske poveznice i izmjene pravila</h2>
+                    <p>
+                        Otvaranjem poveznice na drugu web stranicu prelazite na uslugu koja ima
+                        vlastite informacije o privatnosti. Molimo pročitajte ih prije nego što
+                        ondje dostavite osobne podatke. Time se ne uklanja naša odgovornost za
+                        obradu za koju smo odgovorni.
+                    </p>
+                    <p>
+                        Pri izmjeni ovih pravila ažurirat ćemo datum na ovoj stranici. Ako
+                        namjeravamo koristiti osobne podatke u novu svrhu, prije toga moramo pružiti
+                        potrebne informacije i pribaviti privolu kada je ona potrebna. Sama objava
+                        izmijenjenih pravila ne predstavlja privolu.
                     </p>
                 </div>
             </section>
@@ -328,36 +513,36 @@
             <div class="container footer sm:footer-horizontal text-lg min-[640px]:text-2xl">
                 <aside>
                     <a
-                        href="/en/#top"
+                        href="/hr/"
                         class="flex items-end gap-0">
                         <img
                             src="/assets/images/IskraLogo.png"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-25 mr-4" />
                         <img
                             src="/assets/images/iskra-text-logo.svg"
-                            alt="Iskra logo"
+                            alt="Logotip Iskre"
                             class="h-10 mb-5" />
                     </a>
                     <p class="text-(--text-muted) font-light mt-3 text-base min-[640px]:text-lg">
-                        © 2026 Iskra. All rights reserved.
+                        © 2026 Iskra. Sva prava pridržana.
                     </p>
                 </aside>
                 <nav class="flex flex-col gap-2 min-[640px]:gap-4">
-                    <h6 class="text-(--text-muted) uppercase">Pages</h6>
-                    <a href="/en/#projects">Projects</a>
-                    <a href="/en/#services">Services</a>
-                    <a href="/en/#about">About</a>
+                    <h6 class="text-(--text-muted) uppercase">Stranice</h6>
+                    <a href="/hr/#projects">Projekti</a>
+                    <a href="/hr/#services">Usluge</a>
+                    <a href="/hr/#about">O nama</a>
                     <a
-                        href="mailto:hello@byiskra.com?subject=Website%20project%20inquiry"
+                        href="mailto:hello@byiskra.com?subject=Upit%20za%20izradu%20web%20stranice"
                         class="btn"
-                        >Contact</a
+                        >Kontakt</a
                     >
                 </nav>
                 <nav class="flex flex-col gap-2 min-[640px]:gap-4">
-                    <h6 class="text-(--text-muted) uppercase">Legal</h6>
-                    <a href="/en/terms-of-use/">Terms of Use</a>
-                    <a href="/en/privacy-policy/">Privacy Policy</a>
+                    <h6 class="text-(--text-muted) uppercase">Pravne informacije</h6>
+                    <a href="/hr/terms-of-use/">Uvjeti korištenja</a>
+                    <a href="/hr/privacy-policy/">Pravila privatnosti</a>
                 </nav>
             </div>
         </footer>

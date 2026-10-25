@@ -5,12 +5,10 @@
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
-        <title>Iskra | UX Design & Web Development</title>
+        <title>Custom Web Design &amp; Development | Iskra</title>
         <meta
             name="description"
-            content="Iskra is a UX-focused web design and development agency
-        founded in Zagreb, Croatia. We build sharp, conversion-focused websites, landing pages,
-        e-commerce experiences, and digital products that help brands grow online." />
+            content="Custom web design and development by Iskra. Fast, responsive websites and online stores tailored to your business. Get in touch to discuss your project." />
         <link
             rel="icon"
             type="image/png"
@@ -18,16 +16,25 @@
         <link
             rel="canonical"
             href="https://byiskra.com/en/" />
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://byiskra.com/en/" />
+        <link
+            rel="alternate"
+            hreflang="hr"
+            href="https://byiskra.com/hr/" />
+
 
         <meta
             property="og:type"
             content="website" />
         <meta
             property="og:title"
-            content="Iskra | UX Design & Web Development" />
+            content="Custom Web Design &amp; Development | Iskra" />
         <meta
             property="og:description"
-            content="UX-focused web design and development agency creating sharp, fast, conversion-focused websites for brands that want stronger credibility and better results online." />
+            content="Websites built around your business: custom design, responsive development and a clear path from first visit to enquiry. Explore Iskra’s work." />
         <meta
             property="og:image"
             content="https://byiskra.com/assets/images/IskraFullLogo.png" />
@@ -43,43 +50,86 @@
             content="summary_large_image" />
         <meta
             name="twitter:title"
-            content="Iskra | UX Design & Web Development" />
+            content="Custom Web Design &amp; Development | Iskra" />
         <meta
             name="twitter:description"
-            content="Sharp, conversion-focused websites, UX/UI design, branding, landing pages, e-commerce, SEO, performance optimization, and ongoing support." />
+            content="Websites built around your business: custom design, responsive development and a clear path from first visit to enquiry. Explore Iskra’s work." />
         <meta
             name="twitter:image"
             content="https://byiskra.com/assets/images/IskraFullLogo.png" />
 
+        <meta
+            property="og:locale"
+            content="en_GB" />
+        <meta
+            property="og:locale:alternate"
+            content="hr_HR" />
+        <meta
+            property="og:image:alt"
+            content="Iskra logo" />
+        <meta
+            name="twitter:image:alt"
+            content="Iskra logo" />
+
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                "name": "Iskra",
-                "url": "https://byiskra.com/en/",
-                "logo": "https://byiskra.com/assets/images/IskraLogo.png",
-                "image": "https://byiskra.com/assets/images/IskraFullLogo.png",
-                "description": "Iskra is a UX-focused web design and development agency founded in Zagreb, Croatia. The agency builds sharp, conversion-focused websites, landing pages, e-commerce experiences, and digital products.",
-                "email": "hello@byiskra.com",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Zagreb",
-                    "addressCountry": "HR"
-                },
-                "areaServed": ["Croatia", "Europe", "International"],
-                "knowsAbout": [
-                    "UX design",
-                    "Web development",
-                    "Web design",
-                    "Branding",
-                    "Landing pages",
-                    "E-commerce",
-                    "SEO optimization",
-                    "Performance optimization",
-                    "Website maintenance",
-                    "Generative AI"
-                ],
-                "sameAs": []
+                "@graph": [
+                    {
+                        "@type": "Brand",
+                        "@id": "https://byiskra.com/#brand",
+                        "name": "Iskra",
+                        "url": "https://byiskra.com/",
+                        "logo": "https://byiskra.com/assets/images/IskraLogo.png"
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://byiskra.com/#website",
+                        "url": "https://byiskra.com/",
+                        "name": "Iskra",
+                        "inLanguage": [
+                            "en",
+                            "hr"
+                        ],
+                        "about": {
+                            "@id": "https://byiskra.com/#brand"
+                        }
+                    },
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://byiskra.com/en/#webpage",
+                        "url": "https://byiskra.com/en/",
+                        "name": "Custom Web Design & Development | Iskra",
+                        "description": "Custom web design and development by Iskra. Fast, responsive websites and online stores tailored to your business. Get in touch to discuss your project.",
+                        "inLanguage": "en",
+                        "isPartOf": {
+                            "@id": "https://byiskra.com/#website"
+                        },
+                        "about": {
+                            "@id": "https://byiskra.com/#brand"
+                        },
+                        "mainEntity": {
+                            "@id": "https://byiskra.com/#web-design-service"
+                        }
+                    },
+                    {
+                        "@type": "Service",
+                        "@id": "https://byiskra.com/#web-design-service",
+                        "name": "Custom Web Design & Development",
+                        "description": "Custom web design and development under the Iskra brand, including responsive websites, website redesigns, landing pages and online stores.",
+                        "serviceType": [
+                            "Web design",
+                            "Web development",
+                            "Website redesign",
+                            "Landing page design",
+                            "E-commerce development"
+                        ],
+                        "brand": {
+                            "@id": "https://byiskra.com/#brand"
+                        },
+                        "image": "https://byiskra.com/assets/images/IskraFullLogo.png"
+                    }
+                ]
             }
         </script>
 
@@ -158,8 +208,6 @@
                             "<p>No optional tracking tool is currently used. The Analytics option is inactive. These settings do not control email processing or requests needed to load external files.</p>",
                         saveButtonText: "Save and close",
                         saveButtonAccessibleLabel: "Save your cookie preferences",
-                        creditLinkText: "Get this banner for free",
-                        creditLinkAccessibleLabel: "Get this banner for free",
                     },
                 },
             });
@@ -253,7 +301,7 @@
                             class="w-full lg:w-2/3 flex justify-start items-center">
                             <h1
                                 class="w-full font-medium text-2xl min-[334px]:text-3xl min-[391px]:text-4xl min-[540px]:text-5xl min-[1036px]:text-6xl xl:text-[78px] 2xl:text-[86px]">
-                                Iskra is a UX-focused web development agency
+                                Custom Web Design & Development
                             </h1>
                         </div>
                         <div
