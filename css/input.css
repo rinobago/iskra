@@ -181,7 +181,8 @@ body {
     padding: 10px 18px;
 }
 
-.website-navbar ul li:nth-child(1) a {
+.website-navbar ul li:nth-child(1) a,
+.website-navbar .language-switch {
     color: transparent;
     background: linear-gradient(to right, var(--color-accent) 50%, var(--text-primary) 50%) 100%;
     background-clip: text;
@@ -202,8 +203,52 @@ body {
     background-size: 200% 100%;
     transition: background-position 0.3s;
 }
-.website-navbar ul li a:hover {
+.website-navbar ul li a:hover,
+.website-navbar .language-switch:hover,
+.website-navbar .language-switch:focus-visible {
     background-position: 0 100%;
+}
+
+.language-switch {
+    display: inline-grid;
+    grid-template-columns: auto 1px auto;
+    align-items: center;
+    column-gap: 0.35em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.language-divider {
+    width: 1px;
+    height: 1em;
+    background-color: currentColor;
+}
+
+.website-navbar .language-divider {
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+}
+
+/* Mobile can keep using regular text opacity. */
+.language-switch .language-inactive {
+    opacity: 0.5;
+}
+
+@media (min-width: 1024px) {
+    .website-navbar .language-switch .language-inactive {
+        opacity: 1;
+    }
+
+    /* English page: dim HR. */
+    html[lang="en"] .website-navbar .language-switch {
+        mask-image: linear-gradient(to right, rgb(0 0 0 / 50%) 0 41.6667%, black 41.6667% 100%);
+    }
+
+    /* Croatian page: dim EN. */
+    html[lang="hr"] .website-navbar .language-switch {
+        mask-image: linear-gradient(to right, black 0 58.3333%, rgb(0 0 0 / 50%) 58.3333% 100%);
+    }
 }
 
 #navToggle {
