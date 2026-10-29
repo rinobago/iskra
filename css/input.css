@@ -787,7 +787,6 @@ footer nav a:hover {
    ====================================================== */
 
 [data-animate="navbar"],
-[data-animate="hero"],
-[data-animate="fade-up"] {
+[data-animate="hero"] {
     visibility: hidden;
 }

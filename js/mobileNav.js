@@ -7,12 +7,14 @@ export function initMobileNav() {
     const sideNavLinks = sideNav.querySelectorAll("li");
 
     function openSideNav() {
+        sideNav.inert = false;
         sideNav.classList.add("is-open");
         document.body.style.overflow = "hidden";
         document.body.classList.add("mobile-nav-open");
     }
 
     function closeSideNav() {
+        sideNav.inert = true;
         sideNav.classList.remove("is-open");
         document.body.style.overflow = "";
         document.body.classList.remove("mobile-nav-open");

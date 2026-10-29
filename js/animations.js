@@ -119,17 +119,26 @@ mm.add("(max-width: 1023px)", () => {
 });
 
 if (fadeUpElements.length) {
-    fadeUpElements.forEach((element, index) => {
-        gsap.from(element, {
-            autoAlpha: 0,
-            y: 30,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: element,
-                start: "top 85%",
-                once: true,
+    fadeUpElements.forEach((element) => {
+        const animation = gsap.fromTo(
+            element,
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    once: true,
+                },
             },
+        );
+
+        element.addEventListener("focusin", () => {
+            animation.scrollTrigger?.kill();
+            animation.progress(1).pause();
         });
     });
 }
