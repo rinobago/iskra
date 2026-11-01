@@ -502,6 +502,217 @@ body {
 }
 
 /* ======================================================
+   Contact
+   ====================================================== */
+
+.contact-section {
+    padding-block: clamp(64px, 8vw, 128px);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(48px, 7vw, 112px);
+    max-width: 1480px;
+}
+
+.contact-intro {
+    margin-top: -150px;
+}
+
+.contact-intro h1 {
+    font-size: clamp(48px, 5.5vw, 80px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+.contact-description {
+    max-width: 440px;
+    margin-top: 28px;
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.contact-email {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: fit-content;
+    margin-top: 44px;
+}
+
+.contact-email-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    color: var(--color-primary);
+}
+
+.contact-email-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.contact-email-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.contact-email-address {
+    font-size: clamp(18px, 2vw, 24px);
+    transition: color 0.2s ease;
+}
+
+.contact-email:hover .contact-email-address {
+    color: var(--color-primary);
+}
+
+.contact-form {
+    display: grid;
+    gap: 22px;
+    padding: clamp(24px, 3vw, 44px);
+    border-radius: 24px;
+    background: var(--bg-surface);
+}
+
+.contact-field {
+    display: grid;
+    gap: 9px;
+    min-width: 0;
+}
+
+.contact-field label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.contact-field :is(input, select, textarea) {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+    padding: 13px 16px;
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    color-scheme: dark;
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.contact-field :is(input, textarea)::placeholder,
+.contact-field select:invalid {
+    color: var(--text-muted);
+    opacity: 1;
+}
+
+.contact-field textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+#contact :is(input, select, textarea, button, a):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+.contact-form-note,
+.contact-form-status {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-form :is(.contact-form-note, .contact-form-status) a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contact-submit {
+    justify-self: start;
+    min-height: 52px;
+    height: auto;
+    padding: 14px 24px;
+    gap: 16px;
+    color: var(--bg-primary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-submit svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.2s ease;
+}
+
+.contact-submit:hover svg {
+    transform: translateX(3px);
+}
+
+@media (max-width: 767px) {
+    .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .contact-intro h1 {
+        font-size: clamp(40px, 9vw, 60px);
+    }
+
+    .contact-description {
+        margin-top: 22px;
+        font-size: 16px;
+    }
+
+    .contact-email {
+        margin-top: 28px;
+    }
+
+    .contact-form {
+        gap: 20px;
+        border-radius: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .contact-intro,
+    .contact-form {
+        animation: contact-enter 0.65s ease both;
+    }
+
+    .contact-form {
+        animation-delay: 0.1s;
+    }
+
+    @keyframes contact-enter {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-submit svg {
+        transition: none;
+    }
+}
+
+/* ======================================================
    Small about
    ====================================================== */
 
