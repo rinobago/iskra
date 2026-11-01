@@ -306,7 +306,8 @@ body {
    ====================================================== */
 
 @media (max-width: 540px) {
-    #hero {
+    #hero,
+    #contact .contact-section {
         padding-top: 50px;
     }
 }
@@ -528,6 +529,10 @@ body {
     letter-spacing: -0.045em;
 }
 
+.contact-intro h1 span {
+    white-space: nowrap;
+}
+
 .contact-description {
     max-width: 440px;
     margin-top: 28px;
@@ -652,17 +657,16 @@ body {
 .contact-submit svg {
     width: 22px;
     height: 22px;
-    transition: transform 0.2s ease;
-}
-
-.contact-submit:hover svg {
-    transform: translateX(3px);
 }
 
 @media (max-width: 767px) {
     .contact-layout {
         grid-template-columns: minmax(0, 1fr);
         gap: 40px;
+    }
+
+    .contact-intro {
+        margin-top: 0;
     }
 
     .contact-intro h1 {
