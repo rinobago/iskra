@@ -659,6 +659,17 @@ body {
     height: 22px;
 }
 
+.contact-submit[data-state="loading"] svg,
+.contact-submit[data-state="prepared"] svg {
+    display: none;
+}
+
+.contact-submit:disabled {
+    background-color: var(--color-primary);
+    color: var(--bg-primary);
+    opacity: 0.75;
+}
+
 @media (max-width: 767px) {
     .contact-layout {
         grid-template-columns: minmax(0, 1fr);
