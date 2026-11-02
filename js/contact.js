@@ -9,8 +9,11 @@ form?.addEventListener("submit", (event) => {
     const email = data.get("email").trim();
     const service = data.get("service");
     const message = data.get("message").trim();
-    const subject = `Upit za projekt: ${service}`;
-    const body = `Ime i prezime: ${name}\nE-pošta: ${email}\nUsluga: ${service}\n\n${message}`;
+    const isEnglish = document.documentElement.lang === "en";
+    const subject = `${isEnglish ? "Project inquiry" : "Upit za projekt"}: ${service}`;
+    const body = isEnglish
+        ? `Full name: ${name}\nEmail: ${email}\nService: ${service}\n\n${message}`
+        : `Ime i prezime: ${name}\nE-pošta: ${email}\nUsluga: ${service}\n\n${message}`;
 
     window.location.href = `mailto:hello@byiskra.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     document.getElementById("contact-form-status").hidden = false;
