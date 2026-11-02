@@ -5,8 +5,11 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch",
-        "build": "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --minify"
+        "dev": "concurrently -k \"npm run dev:css\" \"npm run dev:worker\"",
+        "dev:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
+        "dev:worker": "wrangler dev",
+        "build:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify",
+        "build": "npm run build:css && wrangler deploy"
     },
     "keywords": [],
     "author": "",
@@ -14,9 +17,12 @@
     "type": "commonjs",
     "dependencies": {
         "@tailwindcss/cli": "^4.3.2",
+        "hono": "^4.13.16",
         "tailwindcss": "^4.3.2"
     },
     "devDependencies": {
-        "daisyui": "^5.6.13"
+        "concurrently": "^10.0.6",
+        "daisyui": "^5.6.13",
+        "wrangler": "^4.156.1"
     }
 }
