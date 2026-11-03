@@ -660,7 +660,7 @@ body {
 }
 
 .contact-submit[data-state="loading"] svg,
-.contact-submit[data-state="prepared"] svg {
+.contact-submit[data-state="success"] svg {
     display: none;
 }
 

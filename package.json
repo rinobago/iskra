@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "node --test",
         "dev": "concurrently -k \"npm run dev:css\" \"npm run dev:worker\"",
         "dev:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
         "dev:worker": "wrangler dev",
@@ -14,7 +14,7 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "type": "commonjs",
+    "type": "module",
     "dependencies": {
         "@tailwindcss/cli": "^4.3.2",
         "hono": "^4.13.16",

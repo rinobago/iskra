@@ -12,8 +12,14 @@
         <link
             rel="canonical"
             href="https://byiskra.com/hr/contact/" />
-        <link rel="alternate" hreflang="hr" href="https://byiskra.com/hr/contact/" />
-        <link rel="alternate" hreflang="en" href="https://byiskra.com/en/contact/" />
+        <link
+            rel="alternate"
+            hreflang="hr"
+            href="https://byiskra.com/hr/contact/" />
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://byiskra.com/en/contact/" />
         <meta
             property="og:type"
             content="website" />
@@ -265,11 +271,21 @@
                     <form
                         class="contact-form"
                         id="contact-form"
-                        action="mailto:hello@byiskra.com"
+                        action="/api/contact"
                         method="post"
-                        enctype="text/plain"
                         aria-label="Upit za projekt"
                         aria-describedby="contact-form-note">
+                        <div
+                            hidden
+                            aria-hidden="true">
+                            <label for="contact-website">Ostavite ovo polje prazno</label>
+                            <input
+                                id="contact-website"
+                                name="website"
+                                type="text"
+                                tabindex="-1"
+                                autocomplete="off" />
+                        </div>
                         <div class="contact-field">
                             <label for="contact-name">Ime i prezime</label>
                             <input
@@ -304,12 +320,12 @@
                                     selected>
                                     Odaberite uslugu
                                 </option>
-                                <option>Izrada web stranice</option>
-                                <option>Redizajn web stranice</option>
-                                <option>Održavanje web stranice</option>
-                                <option>SEO optimizacija</option>
-                                <option>Vizualni identitet</option>
-                                <option>Nešto drugo</option>
+                                <option value="website">Izrada web stranice</option>
+                                <option value="redesign">Redizajn web stranice</option>
+                                <option value="maintenance">Održavanje web stranice</option>
+                                <option value="seo">SEO optimizacija</option>
+                                <option value="identity">Vizualni identitet</option>
+                                <option value="other">Nešto drugo</option>
                             </select>
                         </div>
                         <div class="contact-field">
@@ -325,16 +341,17 @@
                         <p
                             class="contact-form-note"
                             id="contact-form-note">
-                            Obrazac otvara vašu aplikaciju za e-poštu s pripremljenim upitom. Ondje
-                            pregledajte i pošaljite poruku.
+                            Vaš upit stiže izravno nama. Potvrdu šaljemo na vašu e-poštu, a odgovor
+                            stiže vrlo brzo.
                             <a href="/hr/privacy-policy/">Pravila privatnosti</a>.
                         </p>
                         <button
                             class="btn contact-submit"
                             data-state="idle"
                             aria-live="polite"
-                            type="submit">
-                            <span data-submit-label>Pripremite upit</span>
+                            type="submit"
+                            disabled>
+                            <span data-submit-label>Pošaljite upit</span>
                             <svg
                                 aria-hidden="true"
                                 viewBox="0 0 24 24"
@@ -351,10 +368,9 @@
                             class="contact-form-status"
                             id="contact-form-status"
                             role="status"
-                            hidden>
-                            Upit je pripremljen. Ako se aplikacija za e-poštu nije otvorila, pišite
-                            nam izravno na <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>.
-                        </p>
+                            aria-live="polite"
+                            aria-atomic="true"
+                            hidden></p>
                         <noscript
                             ><p class="contact-form-note">
                                 Za upit nam pišite izravno na

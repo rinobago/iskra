@@ -4,58 +4,106 @@ if (form) {
     const button = form.querySelector(".contact-submit");
     const label = button.querySelector("[data-submit-label]");
     const status = document.getElementById("contact-form-status");
-    const isEnglish = document.documentElement.lang === "en";
+    const fields = [...form.querySelectorAll("input, select, textarea")];
+    const language = document.documentElement.lang === "en" ? "en" : "hr";
     const idleLabel = label.textContent.trim();
-    const labels = isEnglish
-        ? { loading: "Preparing…", prepared: "Inquiry prepared", retry: "Try again" }
-        : { loading: "Priprema…", prepared: "Upit pripremljen", retry: "Pokušajte ponovno" };
+    const text =
+        language === "en"
+            ? {
+                  loading: "Sending…",
+                  success: "Inquiry sent",
+                  error: "Try again",
+                  sent: "Thank you! Your inquiry has been sent. Look out for a confirmation email — we'll be in touch very soon.",
+                  failed: "We couldn't confirm your submission. Please try again or email hello@byiskra.com directly.",
+                  invalid: "Please check all required fields and enter a valid email address.",
+                  limited:
+                      "You've made several attempts. Please wait a minute before trying again.",
+                  required: "Please fill out this field.",
+              }
+            : {
+                  loading: "Slanje…",
+                  success: "Upit je poslan",
+                  error: "Pokušajte ponovno",
+                  sent: "Hvala! Vaš je upit poslan. Potvrda stiže na vašu e-poštu — javit ćemo vam se vrlo brzo.",
+                  failed: "Nismo uspjeli potvrditi slanje upita. Pokušajte ponovno ili nam pišite izravno na hello@byiskra.com.",
+                  invalid: "Provjerite sva obvezna polja i unesite valjanu adresu e-pošte.",
+                  limited: "Poslali ste više zahtjeva. Pričekajte minutu pa pokušajte ponovno.",
+                  required: "Ispunite ovo polje.",
+              };
+    let lastPayload;
+    let submissionId;
 
-    function setState(state) {
+    function setState(state, message = "") {
         button.dataset.state = state;
-        button.disabled = state !== "idle";
-        button.setAttribute("aria-busy", String(state === "loading"));
-        label.textContent = labels[state] || idleLabel;
+        button.disabled = state === "loading" || state === "success";
+        form.setAttribute("aria-busy", String(state === "loading"));
+        label.textContent = text[state] || idleLabel;
+        status.textContent = message;
+        status.hidden = !message;
     }
 
-    function resetState() {
-        if (button.dataset.state === "loading") return;
-        setState("idle");
-        status.hidden = true;
-    }
-
-    form.addEventListener("input", resetState);
-    form.addEventListener("reset", resetState);
+    form.addEventListener("input", (event) => {
+        event.target.setCustomValidity?.("");
+        if (button.dataset.state !== "loading") setState("idle");
+    });
+    form.addEventListener("change", () => {
+        if (button.dataset.state !== "loading") setState("idle");
+    });
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
-        if (button.disabled || !form.reportValidity()) return;
+        if (button.disabled) return;
+        for (const field of fields) {
+            if (field.required) {
+                field.value = field.value.trim();
+                field.setCustomValidity(field.value ? "" : text.required);
+            }
+        }
+        if (!form.reportValidity()) return;
 
-        const data = new FormData(form);
-        const name = data.get("name").trim();
-        const email = data.get("email").trim();
-        const service = data.get("service");
-        const message = data.get("message").trim();
-        const subject = `${isEnglish ? "Project inquiry" : "Upit za projekt"}: ${service}`;
-        const body = isEnglish
-            ? `Full name: ${name}\nEmail: ${email}\nService: ${service}\n\n${message}`
-            : `Ime i prezime: ${name}\nE-pošta: ${email}\nUsluga: ${service}\n\n${message}`;
-
-        status.hidden = true;
+        const data = Object.fromEntries(new FormData(form));
+        data.language = language;
+        const payload = JSON.stringify(data);
+        if (payload !== lastPayload) {
+            submissionId = crypto.randomUUID();
+            lastPayload = payload;
+        }
+        data.submissionId = submissionId;
         setState("loading");
-
-        // Let the browser paint the loading state before handing off to the email app.
-        await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+        fields.forEach((field) => {
+            field.disabled = true;
+        });
 
         try {
-            window.location.href = `mailto:hello@byiskra.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            // A mailto handoff cannot confirm delivery. Mark this as sent only after
-            // the future email endpoint confirms a successful submission.
-            setState("prepared");
+            const response = await fetch(form.action, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+                signal: AbortSignal.timeout(20000),
+            });
+            const result = await response.json();
+            if (!response.ok || result.success !== true) {
+                const message =
+                    result.code === "RATE_LIMITED"
+                        ? text.limited
+                        : result.code === "INVALID_INPUT"
+                          ? text.invalid
+                          : text.failed;
+                setState("error", message);
+                return;
+            }
+            form.reset();
+            lastPayload = undefined;
+            setState("success", text.sent);
         } catch {
-            setState("idle");
-            label.textContent = labels.retry;
+            setState("error", text.failed);
+        } finally {
+            fields.forEach((field) => {
+                field.disabled = false;
+            });
         }
-
-        status.hidden = false;
     });
+
+    // The HTML button stays disabled if JavaScript cannot initialize.
+    setState("idle");
 }

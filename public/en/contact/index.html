@@ -12,8 +12,14 @@
         <link
             rel="canonical"
             href="https://byiskra.com/en/contact/" />
-        <link rel="alternate" hreflang="hr" href="https://byiskra.com/hr/contact/" />
-        <link rel="alternate" hreflang="en" href="https://byiskra.com/en/contact/" />
+        <link
+            rel="alternate"
+            hreflang="hr"
+            href="https://byiskra.com/hr/contact/" />
+        <link
+            rel="alternate"
+            hreflang="en"
+            href="https://byiskra.com/en/contact/" />
         <meta
             property="og:type"
             content="website" />
@@ -265,11 +271,21 @@
                     <form
                         class="contact-form"
                         id="contact-form"
-                        action="mailto:hello@byiskra.com"
+                        action="/api/contact"
                         method="post"
-                        enctype="text/plain"
                         aria-label="Project inquiry"
                         aria-describedby="contact-form-note">
+                        <div
+                            hidden
+                            aria-hidden="true">
+                            <label for="contact-website">Leave this field empty</label>
+                            <input
+                                id="contact-website"
+                                name="website"
+                                type="text"
+                                tabindex="-1"
+                                autocomplete="off" />
+                        </div>
                         <div class="contact-field">
                             <label for="contact-name">Full name</label>
                             <input
@@ -304,12 +320,12 @@
                                     selected>
                                     Select a service
                                 </option>
-                                <option>Website development</option>
-                                <option>Website redesign</option>
-                                <option>Website maintenance</option>
-                                <option>SEO optimization</option>
-                                <option>Visual identity</option>
-                                <option>Something else</option>
+                                <option value="website">Website development</option>
+                                <option value="redesign">Website redesign</option>
+                                <option value="maintenance">Website maintenance</option>
+                                <option value="seo">SEO optimization</option>
+                                <option value="identity">Visual identity</option>
+                                <option value="other">Something else</option>
                             </select>
                         </div>
                         <div class="contact-field">
@@ -325,16 +341,17 @@
                         <p
                             class="contact-form-note"
                             id="contact-form-note">
-                            This form opens your email app with a prepared inquiry. Review and
-                            send your message there.
+                            Your inquiry goes straight to our inbox. We’ll email you a confirmation
+                            and get back to you very soon.
                             <a href="/en/privacy-policy/">Privacy Policy</a>.
                         </p>
                         <button
                             class="btn contact-submit"
                             data-state="idle"
                             aria-live="polite"
-                            type="submit">
-                            <span data-submit-label>Prepare inquiry</span>
+                            type="submit"
+                            disabled>
+                            <span data-submit-label>Send inquiry</span>
                             <svg
                                 aria-hidden="true"
                                 viewBox="0 0 24 24"
@@ -351,10 +368,9 @@
                             class="contact-form-status"
                             id="contact-form-status"
                             role="status"
-                            hidden>
-                            Your inquiry is ready. If your email app did not open, email us
-                            directly at <a href="mailto:hello@byiskra.com">hello@byiskra.com</a>.
-                        </p>
+                            aria-live="polite"
+                            aria-atomic="true"
+                            hidden></p>
                         <noscript
                             ><p class="contact-form-note">
                                 For inquiries, email us directly at
@@ -410,6 +426,8 @@
         <script
             type="module"
             src="/js/index.js"></script>
-        <script type="module" src="/js/contact.js"></script>
+        <script
+            type="module"
+            src="/js/contact.js"></script>
     </body>
 </html>

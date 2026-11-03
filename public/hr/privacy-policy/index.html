@@ -249,20 +249,19 @@
                 <div class="container">
                     <h2>Kontakt i podaci koje nam dostavljate</h2>
                     <p>
-                        Na web stranici nalaze se poveznice za kontakt e-poštom i obrazac koji
-                        priprema upit u vašoj aplikaciji za e-poštu. Podaci uneseni u obrazac ne
-                        šalju se našem poslužitelju niti se spremaju u preglednik. Poruku
-                        pregledavate i šaljete sami u aplikaciji za e-poštu. Ako pošaljete
-                        e-poruku, ona se prima i pohranjuje u Gmailu, Googleovoj usluzi e-pošte.
+                        Na web stranici nalaze se poveznice za kontakt e-poštom i obrazac koji upit
+                        šalje izravno nama. Slanjem obrasca vaše ime, adresa e-pošte, odabrana
+                        usluga, poruka i jezik stranice šalju se sustavu Cloudflare Workers. Resend
+                        dostavlja upit na hello@byiskra.com i šalje potvrdu na adresu e-pošte koju
+                        ste naveli. Poruke upućene nama primaju se i pohranjuju u Gmailu, Googleovoj
+                        usluzi e-pošte.
                     </p>
                     <p>
-                        Planiramo omogućiti izravno slanje kontaktnog obrasca putem usluge Resend.
-                        Ta mogućnost još nije aktivna. Nakon uključivanja, slanjem obrasca vaše
-                        ime, adresa e-pošte, odabrana usluga i poruka poslat će se sustavu za obradu
-                        upita, koji će putem Resenda dostaviti upit na hello@byiskra.com. Poruka će
-                        zatim biti primljena u naš Gmail sandučić. Prije uključivanja ažurirat ćemo
-                        ova pravila podacima o pružatelju hostinga sustava za obradu upita i
-                        konačnim pojedinostima obrade.
+                        Unosi iz obrasca ne spremaju se u pohranu preglednika ni u zasebnu bazu
+                        upita. Sustav provjerava obvezna polja i koristi vašu IP adresu za
+                        ograničavanje broja zahtjeva radi sprječavanja zlouporabe. Identifikator
+                        slanja pomaže izbjeći dvostruke poruke kada na istoj stranici ponovite
+                        slanje nepromijenjenog upita.
                     </p>
                     <p>
                         Primamo vašu adresu e-pošte, ime pošiljatelja ako je navedeno, predmet i
@@ -321,13 +320,12 @@
                 <div class="container">
                     <h2>Hosting i pružatelji usluga</h2>
                     <p>
-                        Ova je web stranica smještena na usluzi GitHub Pages. Radi posluživanja
-                        stranica hosting infrastruktura prima tehničke podatke o zahtjevu,
-                        uključujući vašu IP adresu i traženi resurs. GitHub navodi da iz sigurnosnih
-                        razloga bilježi IP adrese posjetitelja. Pogledajte
-                        <a
-                            href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
-                            >GitHubovu izjavu o privatnosti</a
+                        Cloudflare pruža hosting ove web stranice i izvršava obradu kontaktnog
+                        obrasca. Njegova infrastruktura prima tehničke podatke o zahtjevu,
+                        uključujući vašu IP adresu i traženi resurs, te obrađuje unesene podatke
+                        radi dostave upita. Pogledajte
+                        <a href="https://www.cloudflare.com/privacypolicy/"
+                            >Cloudflareova pravila privatnosti</a
                         >
                         za informacije o toj obradi.
                     </p>
@@ -350,13 +348,15 @@
                         da se poruke s upitima šalju Namecheapu.
                     </p>
                     <p>
-                        Za planirano izravno slanje obrasca Resend (Plus Five Five, Inc.) obrađivat
-                        će unesene kontaktne podatke, poruku i metapodatke o isporuci radi dostave
-                        upita u naše ime. Obrada će biti obuhvaćena Resendovim
+                        Za izravno slanje obrasca Resend (Plus Five Five, Inc.) obrađuje unesene
+                        kontaktne podatke, poruku i metapodatke o isporuci radi dostave upita i
+                        potvrda u naše ime. Obrada je obuhvaćena Resendovim
                         <a href="https://resend.com/legal/dpa">dodatkom o obradi podataka</a>.
-                        Pogledajte njegova <a href="https://resend.com/legal/privacy-policy">pravila
-                        privatnosti</a> i <a href="https://resend.com/legal/subprocessors">popis
-                        podizvršitelja obrade</a>. Trenutačni obrazac ne šalje podatke Resendu.
+                        Pogledajte njegova
+                        <a href="https://resend.com/legal/privacy-policy">pravila privatnosti</a> i
+                        <a href="https://resend.com/legal/subprocessors"
+                            >popis podizvršitelja obrade</a
+                        >.
                     </p>
                     <p>
                         Podaci se mogu otkriti i nadležnim tijelima kada to zahtijeva zakon ili
@@ -405,25 +405,20 @@
                 <div class="container">
                     <h2>Međunarodni prijenosi podataka</h2>
                     <p>
-                        Nakon uključivanja izravnog slanja Resend će podatke iz upita pohranjivati
-                        u SAD-u. Njegova dokumentacija za te prijenose opisuje standardne ugovorne
-                        klauzule EU-a; odabir europske regije slanja ne premješta pohranu u Europu.
-                        Pogledajte <a href="https://resend.com/security/gdpr">Resendove informacije
-                        o zaštiti podataka</a>.
-                    </p>
-                    <p>
-                        GitHub u svojoj izjavi o privatnosti navodi da osobne podatke obrađuje u
-                        Sjedinjenim Američkim Državama i drugim zemljama te da za prijenose u zemlje
-                        bez odluke o primjerenosti u pravilu koristi standardne ugovorne klauzule
-                        Europske komisije. Opisuje i svoje sudjelovanje u Okviru EU-a i SAD-a za
-                        privatnost podataka. Pogledajte
-                        <a
-                            href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#international-data-transfers"
-                            >GitHubove informacije o prijenosima podataka</a
+                        Resend podatke iz upita pohranjuje u SAD-u. Njegova dokumentacija za te
+                        prijenose opisuje standardne ugovorne klauzule EU-a; odabir europske regije
+                        slanja ne premješta pohranu u Europu. Pogledajte
+                        <a href="https://resend.com/security/gdpr"
+                            >Resendove informacije o zaštiti podataka</a
                         >.
                     </p>
                     <p>
-                        GitHub, Google i infrastruktura za isporuku vanjskih datoteka djeluju
+                        Cloudflare obrađuje podatke putem međunarodne infrastrukture. Njegova
+                        <a href="https://www.cloudflare.com/privacypolicy/">pravila privatnosti</a>
+                        opisuju međunarodnu obradu i primjenjive uvjete prijenosa podataka.
+                    </p>
+                    <p>
+                        Cloudflare, Google i infrastruktura za isporuku vanjskih datoteka djeluju
                         međunarodno. Osobni podaci mogu se obrađivati izvan Europskoga gospodarskog
                         prostora. Zemlje i uvjeti prijenosa ovise o konkretnoj usluzi i uvjetima
                         korisničkog računa.
@@ -444,11 +439,12 @@
                 <div class="container">
                     <h2>Koliko dugo čuvamo podatke</h2>
                     <p>
-                        Nakon uključivanja Resendovi zapisi o isporuci imat će zaseban rok čuvanja
-                        od našeg sandučića. Resend trenutačno navodi 30 dana za podatke o e-pošti i
-                        zapise na planovima Free, Pro i Scale, uz drukčije uvjete za Enterprise.
-                        Pogledajte <a href="https://resend.com/security/gdpr">Resendove pojedinosti
-                        o čuvanju podataka</a>.
+                        Resendovi zapisi o isporuci imaju zaseban rok čuvanja od našeg sandučića.
+                        Resend trenutačno navodi 30 dana za podatke o e-pošti i zapise na planovima
+                        Free, Pro i Scale, uz drukčije uvjete za Enterprise. Pogledajte
+                        <a href="https://resend.com/security/gdpr"
+                            >Resendove pojedinosti o čuvanju podataka</a
+                        >.
                     </p>
                     <p>
                         Za upit koji ne dovede do projekta kriterij čuvanja podataka jest završetak
