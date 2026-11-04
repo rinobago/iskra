@@ -14,6 +14,12 @@ contactRouter.use("*", bodyLimit({
     onError: (c) => fail(c, "INVALID_INPUT", 413),
 }));
 
+// The site key is public; never return the secret key to the browser.
+contactRouter.get("/config", (c) => {
+    if (!c.env?.SITE_KEY) return fail(c, "UNAVAILABLE", 503);
+    return c.json({ siteKey: c.env.SITE_KEY });
+});
+
 contactRouter.post("/", async (c) => {
     const origin = c.req.header("Origin");
     if (origin && origin !== new URL(c.req.url).origin) {
@@ -48,7 +54,10 @@ contactRouter.post("/", async (c) => {
     ) {
         return fail(c, "INVALID_INPUT", 400);
     }
-    if (!c.env?.RESEND_API_KEY || !c.env?.CONTACT_RATE_LIMITER) {
+    if (typeof input.turnstileToken !== "string" || !input.turnstileToken || input.turnstileToken.length > 2048) {
+        return fail(c, "TURNSTILE_FAILED", 400);
+    }
+    if (!c.env?.RESEND_API_KEY || !c.env?.CONTACT_RATE_LIMITER || !c.env?.TURNSTILE_SECRET_KEY) {
         return fail(c, "UNAVAILABLE", 503);
     }
     try {
@@ -58,6 +67,21 @@ contactRouter.post("/", async (c) => {
         if (!success) {
             c.header("Retry-After", "60");
             return fail(c, "RATE_LIMITED", 429);
+        }
+        const verification = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                secret: c.env.TURNSTILE_SECRET_KEY,
+                response: input.turnstileToken,
+                remoteip: c.req.header("CF-Connecting-IP"),
+            }),
+            signal: AbortSignal.timeout(8000),
+        });
+        if (!verification.ok) return fail(c, "TURNSTILE_FAILED", 503);
+        const verified = await verification.json();
+        if (verified.success !== true || verified.action !== "contact" || verified.hostname !== new URL(c.req.url).hostname) {
+            return fail(c, "TURNSTILE_FAILED", 403);
         }
         // Strict validation checks both messages before accepting either.
         // Retries reuse the same key if the browser did not receive the response.

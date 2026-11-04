@@ -19,6 +19,8 @@ if (form) {
                   limited:
                       "You've made several attempts. Please wait a minute before trying again.",
                   required: "Please fill out this field.",
+                  verification: "Please complete the security check before sending.",
+                  verificationError: "The security check couldn't finish. Please try the check again, or reload this page if it doesn't appear.",
               }
             : {
                   loading: "Slanje…",
@@ -29,13 +31,17 @@ if (form) {
                   invalid: "Provjerite sva obvezna polja i unesite valjanu adresu e-pošte.",
                   limited: "Poslali ste više zahtjeva. Pričekajte minutu pa pokušajte ponovno.",
                   required: "Ispunite ovo polje.",
+                  verification: "Prije slanja dovršite sigurnosnu provjeru.",
+                  verificationError: "Sigurnosna provjera nije uspjela. Pokušajte ponovno ili osvježite stranicu ako se provjera ne prikazuje.",
               };
     let lastPayload;
     let submissionId;
+    let turnstileToken = "";
+    let widgetId;
 
     function setState(state, message = "") {
         button.dataset.state = state;
-        button.disabled = state === "loading" || state === "success";
+        button.disabled = state === "loading" || state === "success" || !turnstileToken;
         form.setAttribute("aria-busy", String(state === "loading"));
         label.textContent = text[state] || idleLabel;
         status.textContent = message;
@@ -49,6 +55,47 @@ if (form) {
     form.addEventListener("change", () => {
         if (button.dataset.state !== "loading") setState("idle");
     });
+
+    async function loadTurnstile() {
+        try {
+            const response = await fetch("/api/contact/config", { signal: AbortSignal.timeout(10000) });
+            if (!response.ok) throw new Error("Configuration unavailable");
+            const { siteKey } = await response.json();
+            if (!siteKey) throw new Error("Missing site key");
+            await new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                const timer = setTimeout(() => reject(new Error("Turnstile timed out")), 15000);
+                script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+                script.async = true;
+                script.onload = () => { clearTimeout(timer); resolve(); };
+                script.onerror = () => { clearTimeout(timer); reject(new Error("Turnstile unavailable")); };
+                document.head.append(script);
+            });
+            const invalidate = (message) => {
+                turnstileToken = "";
+                if (!["loading", "success"].includes(button.dataset.state)) setState("idle", message);
+            };
+            widgetId = window.turnstile.render("#contact-turnstile", {
+                sitekey: siteKey,
+                action: "contact",
+                appearance: "interaction-only",
+                theme: "dark",
+                size: "compact",
+                language,
+                "response-field": false,
+                callback: (token) => {
+                    turnstileToken = token;
+                    const message = [text.verification, text.verificationError].includes(status.textContent) ? "" : status.textContent;
+                    setState(button.dataset.state, message);
+                },
+                "expired-callback": () => invalidate(text.verification),
+                "error-callback": () => invalidate(text.verificationError),
+                "timeout-callback": () => invalidate(text.verification),
+            });
+        } catch {
+            setState("idle", text.verificationError);
+        }
+    }
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -69,6 +116,9 @@ if (form) {
             lastPayload = payload;
         }
         data.submissionId = submissionId;
+        // Keep the changing token out of the payload comparison so email retries
+        // still reuse the same Resend idempotency key.
+        data.turnstileToken = turnstileToken;
         setState("loading");
         fields.forEach((field) => {
             field.disabled = true;
@@ -79,7 +129,7 @@ if (form) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
-                signal: AbortSignal.timeout(20000),
+                signal: AbortSignal.timeout(25000),
             });
             const result = await response.json();
             if (!response.ok || result.success !== true) {
@@ -88,7 +138,9 @@ if (form) {
                         ? text.limited
                         : result.code === "INVALID_INPUT"
                           ? text.invalid
-                          : text.failed;
+                          : result.code === "TURNSTILE_FAILED"
+                            ? text.verificationError
+                            : text.failed;
                 setState("error", message);
                 return;
             }
@@ -98,6 +150,9 @@ if (form) {
         } catch {
             setState("error", text.failed);
         } finally {
+            turnstileToken = "";
+            setState(button.dataset.state, status.textContent);
+            if (widgetId !== undefined) window.turnstile.reset(widgetId);
             fields.forEach((field) => {
                 field.disabled = false;
             });
@@ -106,4 +161,5 @@ if (form) {
 
     // The HTML button stays disabled if JavaScript cannot initialize.
     setState("idle");
+    loadTurnstile();
 }

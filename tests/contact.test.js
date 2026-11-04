@@ -7,9 +7,12 @@ const valid = {
     name: "Ana Marić", email: "ana@example.com", service: "website",
     message: "Trebamo novu stranicu.\nHvala!", language: "hr", website: "",
     submissionId: "1f653d67-8e93-47ca-9ef8-39219dc1e840",
+    turnstileToken: "test-turnstile-token",
 };
 const env = {
     RESEND_API_KEY: "test-key-not-real",
+    SITE_KEY: "public-test-site-key",
+    TURNSTILE_SECRET_KEY: "private-test-turnstile-key",
     CONTACT_RATE_LIMITER: { limit: async () => ({ success: true }) },
 };
 function submit(data = valid, bindings = env, headers = {}) {
@@ -19,10 +22,21 @@ function submit(data = valid, bindings = env, headers = {}) {
     }, bindings);
 }
 const accepted = () => Response.json({ data: [{ id: "owner-email" }, { id: "confirmation-email" }] });
+const verificationUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const verified = () => Response.json({ success: true, hostname: "byiskra.com", action: "contact" });
+function mockResend(t, implementation = async () => accepted()) {
+    const resend = t.mock.fn(implementation);
+    t.mock.method(globalThis, "fetch", async (url, options) => {
+        if (url === verificationUrl) return verified();
+        return resend(url, options);
+    });
+    return resend;
+}
+
 
 test("both form languages send an English inquiry and a localized confirmation", async (t) => {
     const calls = [];
-    t.mock.method(globalThis, "fetch", async (url, options) => {
+    mockResend(t, async (url, options) => {
         calls.push({ url, options });
         return accepted();
     });
@@ -65,7 +79,7 @@ test("HTML is escaped and message line breaks survive", () => {
 });
 
 test("invalid submissions cannot send email", async (t) => {
-    const fetch = t.mock.method(globalThis, "fetch", async () => { throw new Error("Must not send"); });
+    const fetch = mockResend(t, async () => { throw new Error("Must not send"); });
     const invalid = [null, [], {}, { name: " " }, { name: 42 }, { name: "a".repeat(101) },
         { name: "Ana\r\nBcc: other@example.com" }, { email: "bad-address" },
         { email: "a@example.com\r\nBcc: other@example.com" }, { email: "a@example.com,b@example.com" },
@@ -83,7 +97,7 @@ test("invalid submissions cannot send email", async (t) => {
 });
 
 test("bad JSON, oversized bodies, wrong content types, and cross-origin posts are rejected", async (t) => {
-    const fetch = t.mock.method(globalThis, "fetch", async () => accepted());
+    const fetch = mockResend(t, async () => accepted());
     const malformed = await app.request("https://byiskra.com/api/contact", {
         method: "POST", headers: { "Content-Type": "application/json" }, body: "{",
     }, env);
@@ -95,7 +109,7 @@ test("bad JSON, oversized bodies, wrong content types, and cross-origin posts ar
 });
 
 test("missing configuration and throttling fail without contacting Resend", async (t) => {
-    const fetch = t.mock.method(globalThis, "fetch", async () => accepted());
+    const fetch = mockResend(t, async () => accepted());
     assert.equal((await submit(valid, {})).status, 503);
     assert.equal((await submit(valid, { RESEND_API_KEY: "test" })).status, 503);
     const response = await submit(valid, { ...env, CONTACT_RATE_LIMITER: { limit: async () => ({ success: false }) } });
@@ -107,7 +121,7 @@ test("missing configuration and throttling fail without contacting Resend", asyn
 
 test("provider failures never report success or expose provider errors", async (t) => {
     t.mock.method(console, "error", () => {});
-    const fetch = t.mock.method(globalThis, "fetch");
+    const fetch = mockResend(t);
     for (const result of [
         () => Response.json({ message: "private provider detail" }, { status: 401 }),
         () => Response.json({ data: [{ id: "only-one" }] }),
@@ -122,10 +136,72 @@ test("provider failures never report success or expose provider errors", async (
 });
 
 test("retries use an identical batch and idempotency key", async (t) => {
-    const fetch = t.mock.method(globalThis, "fetch", async () => accepted());
+    const fetch = mockResend(t, async () => accepted());
     await submit();
     await submit();
     const [first, second] = fetch.mock.calls.map((call) => call.arguments[1]);
     assert.equal(first.headers["Idempotency-Key"], second.headers["Idempotency-Key"]);
     assert.equal(first.body, second.body);
+});
+
+
+test("config exposes only SITE_KEY and fails when it is missing", async () => {
+    const response = await app.request("https://byiskra.com/api/contact/config", {}, env);
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get("Cache-Control"), "no-store");
+    assert.deepEqual(await response.json(), { siteKey: "public-test-site-key" });
+    assert.equal((await app.request("https://byiskra.com/api/contact/config", {}, {})).status, 503);
+});
+
+test("missing or malformed tokens are rejected before any external request", async (t) => {
+    const fetch = t.mock.method(globalThis, "fetch", async () => { throw new Error("Must not call provider"); });
+    for (const turnstileToken of [undefined, "", null, 42, "x".repeat(2049)]) {
+        const response = await submit({ ...valid, turnstileToken });
+        assert.equal(response.status, 400);
+        assert.deepEqual(await response.json(), { success: false, code: "TURNSTILE_FAILED" });
+    }
+    assert.equal(fetch.mock.callCount(), 0);
+});
+
+test("Turnstile must approve the correct hostname and action before sending", async (t) => {
+    t.mock.method(console, "error", () => {});
+    let result;
+    const calls = [];
+    t.mock.method(globalThis, "fetch", async (url, options) => {
+        calls.push({ url, options });
+        if (url === verificationUrl) return result();
+        return accepted();
+    });
+    for (const verificationResult of [
+        () => Response.json({ success: false, "error-codes": ["timeout-or-duplicate"] }),
+        () => Response.json({ success: true, hostname: "other.example", action: "contact" }),
+        () => Response.json({ success: true, hostname: "byiskra.com", action: "other" }),
+        () => Response.json({ success: true }),
+        () => new Response("unavailable", { status: 503 }),
+        () => new Response("not JSON"),
+        () => { throw new DOMException("Timeout", "TimeoutError"); },
+    ]) {
+        result = verificationResult;
+        calls.length = 0;
+        const response = await submit();
+        assert(response.status >= 400);
+        assert.equal((await response.json()).success, false);
+        assert.deepEqual(calls.map(({ url }) => url), [verificationUrl]);
+    }
+    result = verified;
+    calls.length = 0;
+    assert.equal((await submit(valid, env, { "CF-Connecting-IP": "192.0.2.1" })).status, 200);
+    assert.deepEqual(calls.map(({ url }) => url), [verificationUrl, "https://api.resend.com/emails/batch"]);
+    assert.deepEqual(JSON.parse(calls[0].options.body), {
+        secret: env.TURNSTILE_SECRET_KEY,
+        response: valid.turnstileToken,
+        remoteip: "192.0.2.1",
+    });
+    assert(!calls[1].options.body.includes(valid.turnstileToken));
+});
+
+test("missing Turnstile secret prevents sending", async (t) => {
+    const fetch = t.mock.method(globalThis, "fetch", async () => accepted());
+    assert.equal((await submit(valid, { ...env, TURNSTILE_SECRET_KEY: undefined })).status, 503);
+    assert.equal(fetch.mock.callCount(), 0);
 });

@@ -1197,6 +1197,9 @@
       justify-content: flex-start;
     }
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
