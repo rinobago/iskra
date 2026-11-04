@@ -69,8 +69,13 @@
     width: 18px;
     transform: rotate(180deg);
 }
-.article-back:hover {
+.article-back:active {
     color: var(--color-primary);
+}
+@media (hover: hover) and (pointer: fine) {
+    .article-back:hover {
+        color: var(--color-primary);
+    }
 }
 .article-hero h1 {
     max-width: 1000px;
@@ -155,9 +160,15 @@
         color 0.18s ease,
         background-color 0.18s ease;
 }
-.article-contents nav a:is(:hover, :active) {
+.article-contents nav a:active {
     color: var(--text-primary);
     background: var(--bg-surface);
+}
+@media (hover: hover) and (pointer: fine) {
+    .article-contents nav a:hover {
+        color: var(--text-primary);
+        background: var(--bg-surface);
+    }
 }
 .article-contents nav a[aria-current="location"] {
     color: var(--bg-primary);
@@ -197,9 +208,15 @@
     background-color: currentColor;
     mask: url("/assets/icons/copy.svg") center / contain no-repeat;
 }
-.share-actions :is(a, button):is(:hover, :active) {
+.share-actions :is(a, button):active {
     color: var(--color-primary);
     transform: translateY(-2px);
+}
+@media (hover: hover) and (pointer: fine) {
+    .share-actions :is(a, button):hover {
+        color: var(--color-primary);
+        transform: translateY(-2px);
+    }
 }
 .share-status {
     color: var(--text-secondary);
@@ -264,8 +281,13 @@
     text-decoration: underline;
     text-underline-offset: 4px;
 }
-.article-body a:hover {
+.article-body a:active {
     color: var(--color-primary-hover);
+}
+@media (hover: hover) and (pointer: fine) {
+    .article-body a:hover {
+        color: var(--color-primary-hover);
+    }
 }
 .article-body code {
     font: inherit;
@@ -344,9 +366,15 @@
         transform 0.2s ease,
         background-color 0.2s ease;
 }
-.article-cta .article-cta-button:hover {
+.article-cta .article-cta-button:active {
     transform: translateY(-2px);
     background: var(--bg-surface);
+}
+@media (hover: hover) and (pointer: fine) {
+    .article-cta .article-cta-button:hover {
+        transform: translateY(-2px);
+        background: var(--bg-surface);
+    }
 }
 .article-cta > img {
     width: 100%;
@@ -391,10 +419,17 @@
 .carousel-controls button:first-child svg {
     transform: rotate(180deg);
 }
-.carousel-controls button:not(:disabled):is(:hover, :active) {
+.carousel-controls button:not(:disabled):active {
     background: var(--color-primary);
     color: var(--bg-primary);
     transform: translateY(-2px);
+}
+@media (hover: hover) and (pointer: fine) {
+    .carousel-controls button:not(:disabled):hover {
+        background: var(--color-primary);
+        color: var(--bg-primary);
+        transform: translateY(-2px);
+    }
 }
 .blog-carousel {
     --card-gap: 28px;
@@ -433,9 +468,14 @@
     pointer-events: none;
     transition: opacity 0.2s ease;
 }
-.blog-preview:hover::before,
+.blog-preview:active::before,
 .blog-preview:focus-within::before {
     opacity: 1;
+}
+@media (hover: hover) and (pointer: fine) {
+    .blog-preview:hover::before {
+        opacity: 1;
+    }
 }
 .preview-image {
     overflow: hidden;
@@ -661,9 +701,6 @@
     .article-meta,
     .article-cover {
         animation: article-enter 0.65s ease both;
-    }
-    .article-meta {
-        animation-delay: 0.08s;
     }
     .article-cover {
         animation-delay: 0.16s;

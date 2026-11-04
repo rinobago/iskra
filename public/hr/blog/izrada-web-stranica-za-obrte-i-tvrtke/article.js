@@ -136,7 +136,5 @@ if (!reducedMotion.matches) {
         },
         { threshold: 0.15 },
     );
-    document
-        .querySelectorAll(".article-body h2, .article-cta, .latest-heading, .blog-preview")
-        .forEach((element) => observer.observe(element));
+    document.querySelectorAll(".article-cta").forEach((element) => observer.observe(element));
 }
