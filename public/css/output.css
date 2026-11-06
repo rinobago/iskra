@@ -33,7 +33,6 @@
     --leading-normal: 1.5;
     --radius-2xl: 1rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
-    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --blur-sm: 8px;
     --blur-lg: 16px;
     --default-transition-duration: 150ms;
@@ -2055,6 +2054,11 @@
   .lg\:w-2\/6 {
     @media (width >= 64rem) {
       width: calc(2 / 6 * 100%);
+    }
+  }
+  .lg\:w-5\/6 {
+    @media (width >= 64rem) {
+      width: calc(5 / 6 * 100%);
     }
   }
   .lg\:w-full {
